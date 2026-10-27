@@ -59,4 +59,6 @@ The [required eight cases](evaluation/assessment_8_tests.md) and [full evaluatio
 
 [Dockerfile](Dockerfile), [docker-compose.yml](docker-compose.yml), and [render.yaml](render.yaml) prepare a single-origin deployment. The Compose and Render templates start in source-reading mode until an eligible Gemini project is configured. [docs/deployment.md](docs/deployment.md) explains the current temporary public demo and the checks needed for durable free hosting. A quick tunnel is dependent on the local machine remaining awake and online; it cannot prove seven days of availability.
 
+For a personal demo on the free Vercel Hobby plan, use the root `Dockerfile.vercel` and follow [Vercel deployment](docs/vercel-deployment.md). It serves the static frontend and FastAPI together, with a temporary Chroma index reconstructed from the packaged snapshot on cold start. The local Gemini key is never bundled; configure it as a Vercel Secret after verifying the project's free-tier status.
+
 Read [architecture](docs/architecture.md) for trust boundaries, [assessment write-up](docs/assessment_writeup.md) for trade-offs and limitations, and [interview walkthrough](docs/interview_walkthrough.md) for the assessment demonstration. The [implementation brief](docs/implementation-brief.md) preserves the supplied requirements.
