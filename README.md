@@ -6,6 +6,8 @@ A working, source-cited assessment chatbot built from the seven PlacidWay pages 
 
 The app answers only from the approved pages. It links each factual answer to its source, preserves displayed price qualifiers, and abstains when the exact treatment, destination, clinic, program, or evidence is absent. It does not give personal medical advice or treat the website's promotional claims as independently verified facts.
 
+Visitors can greet the assistant, ask what it can do, or use clickable follow-up questions. A vague package question prompts for the treatment; an unrelated request gets a clear description of the seven-page scope. The suggested questions were checked against the approved index. The assistant still declines to invent facts beyond those pages.
+
 ## Run locally
 
 Requires Python 3.12, Node 22, and roughly 1 GB free for the local embedding model and dependencies. From the repository root:

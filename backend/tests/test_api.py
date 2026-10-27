@@ -2,6 +2,7 @@ import pytest
 from app.config import Settings
 from app.generation.gemini import GenerationUnavailable
 from app.main import create_app
+from app.safety.messages import PACKAGE_SUGGESTIONS, SUGGESTIONS
 from app.schemas import ChatRequest
 from app.service import ChatService
 from fastapi.testclient import TestClient
@@ -107,11 +108,50 @@ async def test_no_key_is_honest(knowledge):
 async def test_hi_gets_welcome_without_quote_or_source_fallback(service):
     response = await service.chat(ChatRequest(message="HI"))
     assert response.status == "answered"
-    assert response.answer.startswith("Hi! Ask me")
+    assert response.answer.startswith("Hi! How can I help you today?")
     assert "couldn’t verify" not in response.answer
     assert response.sources == []
     assert response.needs_quote is False
     assert response.quote_url is None
+    assert len(response.suggested_questions) == 4
+
+
+async def test_help_and_unrelated_questions_offer_scope_without_quote(service):
+    help_response = await service.chat(ChatRequest(message="What can you do?"))
+    assert help_response.status == "answered"
+    assert len(help_response.suggested_questions) == 4
+    unrelated = await service.chat(ChatRequest(message="What is PlacidWay?"))
+    assert unrelated.status == "unknown"
+    assert unrelated.needs_quote is False
+    assert unrelated.quote_url is None
+    assert len(unrelated.suggested_questions) == 4
+
+
+async def test_suggested_questions_have_source_supported_answers(service):
+    for group in (SUGGESTIONS, PACKAGE_SUGGESTIONS):
+        for language, questions in group.items():
+            for question in questions:
+                response = await service.chat(
+                    ChatRequest(message=question, language=language)
+                )
+                assert response.status == "answered", (language, question)
+                assert response.sources, (language, question)
+
+
+async def test_ambiguous_package_question_offers_three_matching_packages(service):
+    response = await service.chat(ChatRequest(message="How much does the package cost?"))
+    assert response.status == "answered"
+    assert len(response.suggested_questions) == 3
+    assert all("package" in question for question in response.suggested_questions)
+    assert response.needs_quote is False
+
+
+async def test_unrelated_question_has_no_quote_handoff(service):
+    response = await service.chat(ChatRequest(message="Tell me a joke"))
+    assert response.status == "out_of_scope"
+    assert response.needs_quote is False
+    assert response.quote_url is None
+    assert response.suggested_questions
 
 
 async def test_exact_prices_and_followup(service):

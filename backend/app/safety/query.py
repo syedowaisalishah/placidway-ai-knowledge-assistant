@@ -267,7 +267,7 @@ def analyze(
         if re.search(r"[\u0600-\u06ff]", message)
         else "es"
         if re.search(
-            r"\b(cuanto|precio|incluye|tratamiento|puedes|recuperacion|costo|donde|hola|buenos dias|buenas tardes|buenas noches)\b",
+            r"\b(cuanto|precio|incluye|tratamiento|puedes|recuperacion|costo|donde|hola|buenos dias|buenas tardes|buenas noches|gracias|ayuda)\b",
             text,
         )
         else "en"
@@ -292,10 +292,22 @@ def analyze(
     # Social openers are not knowledge requests. Match the whole message so
     # "Hi, what does the package cost?" still reaches the grounded price path.
     if re.fullmatch(
-        r"\s*(?:hi|hi there|hey|hello|hello there|good morning|good afternoon|good evening|hola|buenos dias|buenas tardes|buenas noches|مرحبا|اهلا|أهلا|السلام عليكم|صباح الخير|مساء الخير)[!?.،\s]*",
+        r"\s*(?:hi(?: there)?(?:,? how are you)?|hey(?: there)?(?:,? how are you)?|hello(?: there)?(?:,? how are you)?|how are you|good morning|good afternoon|good evening|hola|buenos dias|buenas tardes|buenas noches|مرحبا|اهلا|أهلا|السلام عليكم|صباح الخير|مساء الخير)[!?.،\s]*",
         text,
     ):
         query.intent = "greeting"
+        return query
+    if re.fullmatch(
+        r"\s*(?:(?:hi|hello|hey)(?: there)?[,! ]+)?(?:help|help me|can you help(?: me)?|what can you do|who are you|how can you help(?: me)?|what can you help with|what (?:questions )?can i ask|suggest (?:some )?questions|show (?:me )?examples|ayuda|(?:hola[, ]+)?que puedes hacer|en que puedes ayudarme|مساعدة|(?:مرحبا\s+)?كيف يمكنك مساعدتي|ماذا يمكنك ان تفعل)[!?.؟،\s]*",
+        text,
+    ):
+        query.intent = "help"
+        return query
+    if re.fullmatch(
+        r"\s*(?:thanks|thank you|thank you very much|gracias|muchas gracias|شكرا|شكرا لك)[!?.؟،\s]*",
+        text,
+    ):
+        query.intent = "thanks"
         return query
     if re.search(
         r"\b(book|schedule|reserve|appointment tomorrow|reservar|cita manana)\b|احجز|حجز موعد",
@@ -309,7 +321,7 @@ def analyze(
         query.intent = "quote"
         return query
     if re.search(
-        r"\b(weather|bitcoin|stock market|football|recipe|poem|clima|tiempo en cancun)\b|الطقس|كرة القدم",
+        r"\b(weather|bitcoin|stock market|stock price|football|recipe|poem|joke|riddle|song|clima|tiempo en cancun)\b|الطقس|كرة القدم",
         text,
     ):
         query.block = "out_of_scope"
@@ -418,6 +430,10 @@ def analyze(
     query.followup = (
         not query.topic
         and bool(previous)
+        and not (
+            "package" in text
+            and previous.get("topic") in ("ITC", "alternative medicine")
+        )
         and (
             query.intent != "overview"
             or bool(re.search(r"what about|and |it\b|that|this|y |وماذا|وما", text))
@@ -442,8 +458,16 @@ def analyze(
                 text,
             )
         )
-        if generic:
+        if generic or re.fullmatch(
+            r"(?:tell me about (?:the |itc )?clinic|what is (?:the |itc )?clinic)[?.! ]*",
+            text,
+        ):
             query.topic = "ITC"
+        elif query.intent in ("pricing", "inclusions", "duration", "recovery") and re.search(
+            r"\b(package|treatment|program|price|cost|clinic|paquete|tratamiento)\b|باقة|علاج",
+            text,
+        ):
+            query.intent = "clarify_topic"
         else:
             query.block = "unsupported_topic"
     return query

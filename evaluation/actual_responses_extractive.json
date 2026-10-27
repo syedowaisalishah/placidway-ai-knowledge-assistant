@@ -1,6 +1,6 @@
 {
   "mode": "extractive",
-  "run_at": "2026-10-27T15:41:55.741501+00:00",
+  "run_at": "2026-10-27T16:36:23.867727+00:00",
   "results": [
     {
       "id": "01",
@@ -30,13 +30,19 @@
             "excerpt": "$18,995 Price starting from\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "a20aa0f7-609b-4e09-bef2-87d696ced464",
+        "conversation_id": "eebef83f-c236-4e5d-be73-56d0d412e6f3",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 636.91,
+      "latency_ms": 316.94,
       "passed": true,
       "failure_reason": ""
     },
@@ -56,13 +62,19 @@
         "status": "unknown",
         "answer": "I can’t establish a like-for-like price comparison from these pages. A similar procedure name does not confirm matching sessions, inclusions, or clinical needs. Please request itemized quotes for both options.",
         "sources": [],
-        "conversation_id": "8b0f37d4-766c-453b-8bb6-52f000d0adb0",
+        "conversation_id": "033fac62-f012-4eb1-99bd-3f91bdd5e37e",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 1.2,
+      "latency_ms": 0.92,
       "passed": true,
       "failure_reason": ""
     },
@@ -92,13 +104,18 @@
             "excerpt": "Included in the Out-Patient Program ($18,995 USD)\nThe Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed as standard within the 3-week program.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months.\n\nIncluded in the In-Patient Program ($30,000 USD)\nThe In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.\n24/7 Medical Supervision: Constant access to dedicated doctor and nursing care throughout the 3-week stay.\nFull Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).\nExtensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.\nDiagnostic Imaging: One prescribed X-ray, ultrasound, or CT scan included per doctor's orders.\nClinical Therapies: Full access to all program-specific alternative and integrative interventions.\nPharmacy Support: Medications specific to the in-patient protocol included and managed by staff.\nPost-Care: A follow-up consultation with an ITC doctor after 3 months."
           }
         ],
-        "conversation_id": "61138254-ded5-4954-9b2e-6bcd7ea7d5c7",
+        "conversation_id": "215ff86b-b863-4930-a99c-e195a778c271",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 446.42,
+      "latency_ms": 166.21,
       "passed": true,
       "failure_reason": ""
     },
@@ -122,13 +139,19 @@
         "status": "unknown",
         "answer": "I couldn’t verify a recovery timeline for this treatment in the approved pages. A program’s duration is not the same as recovery time. Please ask the treating clinician.",
         "sources": [],
-        "conversation_id": "463fccc4-c360-4343-b4a3-d6df9b06a12f",
+        "conversation_id": "6ab8703c-a435-4bbc-9480-062f344a8a1e",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 26.95,
+      "latency_ms": 6.75,
       "passed": true,
       "failure_reason": ""
     },
@@ -151,13 +174,19 @@
         "status": "unknown",
         "answer": "I can’t book or confirm an appointment. Please contact PlacidWay directly to ask about availability and request a free quote.",
         "sources": [],
-        "conversation_id": "372aceb2-d98d-45b2-90f8-0bdf59558fdb",
+        "conversation_id": "c5043825-0771-476b-8bcf-da35fcc00f6f",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 1.0,
+      "latency_ms": 0.38,
       "passed": true,
       "failure_reason": ""
     },
@@ -178,13 +207,19 @@
         "status": "out_of_scope",
         "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "aa0458fd-7d0e-43a2-81b8-748b0a2d332c",
+        "conversation_id": "1bf688fd-ba20-4657-a04d-c88f63516899",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 0.24,
+      "latency_ms": 0.07,
       "passed": true,
       "failure_reason": ""
     },
@@ -204,13 +239,14 @@
         "status": "medical_safety",
         "answer": "I cannot determine whether this treatment is safe or appropriate for your medical situation, or promise a cure or outcome. Please discuss it with a qualified healthcare professional.",
         "sources": [],
-        "conversation_id": "0e4876df-672d-44c9-a857-c4f0baa482cf",
+        "conversation_id": "9729b1e6-fa49-4e20-ba84-66fa4751cfcb",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": []
       },
-      "latency_ms": 0.16,
+      "latency_ms": 0.05,
       "passed": true,
       "failure_reason": ""
     },
@@ -246,13 +282,19 @@
             "excerpt": "$18,995 Price starting from\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "883989ce-ec9d-4378-b130-96822a3d053f",
+        "conversation_id": "8ec8ebc3-d9e2-427d-869f-30e6658ca745",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 3.09,
+      "latency_ms": 0.92,
       "passed": true,
       "failure_reason": ""
     },
@@ -267,15 +309,21 @@
       "source_ids": [],
       "actual": {
         "status": "unknown",
-        "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
+        "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "2c0962f5-ffdf-449e-9a0b-971032352dec",
-        "needs_quote": true,
+        "conversation_id": "1a257849-175a-4edf-bb70-aef74c86e042",
+        "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 1.23,
+      "latency_ms": 0.39,
       "passed": true,
       "failure_reason": ""
     },
@@ -295,13 +343,19 @@
         "status": "unknown",
         "answer": "I couldn’t verify a price for that exact treatment and location in the approved pages. Please request a free quote from PlacidWay.",
         "sources": [],
-        "conversation_id": "7f4dc4da-80f9-45de-9d26-55c40d941d33",
+        "conversation_id": "09114c98-5f96-4f07-95a4-c4f2ed92ce1e",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 2.95,
+      "latency_ms": 0.75,
       "passed": true,
       "failure_reason": ""
     },
@@ -318,13 +372,19 @@
         "status": "unknown",
         "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "sources": [],
-        "conversation_id": "9bc1a72d-8000-4b00-ae14-9d960e83fe6f",
+        "conversation_id": "c32cedf8-ac55-4283-a30b-fc8be7c153d1",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 1.49,
+      "latency_ms": 0.44,
       "passed": true,
       "failure_reason": ""
     },
@@ -344,13 +404,19 @@
         "status": "unknown",
         "answer": "Please ask about one treatment at a time so I can match its exact package and supporting evidence.",
         "sources": [],
-        "conversation_id": "5a304d9d-9004-471a-82fb-0a8b856def99",
-        "needs_quote": true,
+        "conversation_id": "99d2b856-ba5c-44c2-9660-b7c43ced17c2",
+        "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 0.28,
+      "latency_ms": 0.09,
       "passed": true,
       "failure_reason": ""
     },
@@ -376,13 +442,19 @@
             "excerpt": "Included in the Out-Patient Program ($18,995 USD)\nThe Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed on the program as included within the 3-week stay.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed in detail upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months.\n\nIncluded in the In-Patient Program ($30,000 USD)\nThe In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.\n24/7 Medical Supervision: Constant access to dedicated doctor and nursing care 24 hours a day throughout the stay.\nFull Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).\nExtensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.\nDiagnostic Imaging: One prescribed X-ray, ultrasound, or CT scan included per doctor's orders.\nClinical Therapies: Full access to all program-specific alternative and integrative interventions.\nPharmacy Support: Medications specific to the in-patient protocol included and managed by staff (discussed upon admission).\nFollow-up Care: One post-discharge medical consultation with an ITC doctor after 3 months."
           }
         ],
-        "conversation_id": "f33bd901-bf55-4e1a-895b-5ac2fdf0bacb",
+        "conversation_id": "a693893b-20a0-46eb-aa24-ec1b89b02d62",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 35.82,
+      "latency_ms": 7.36,
       "passed": true,
       "failure_reason": ""
     },
@@ -408,13 +480,19 @@
             "excerpt": "Included in the Out-Patient Program ($18,995 USD)\nThe Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed as standard within the 3-week program.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed in detail upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months.\n\nIncluded in the In-Patient Program ($30,000 USD)\nThe In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.\n24/7 Medical Supervision: Constant access to dedicated doctor and nursing care throughout the 3-week stay.\nFull Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).\nExtensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.\nDiagnostic Imaging: One prescribed X-ray, ultrasound, or CT scan included per doctor's orders.\nClinical Therapies: Full access to all program-specific alternative and integrative interventions.\nPharmacy Support: Medications specific to the in-patient protocol included and managed by staff."
           }
         ],
-        "conversation_id": "4b1487db-c8c2-4a82-828b-851210f771b4",
+        "conversation_id": "6e4e292a-b5e8-4071-9ae4-f36b8ad2dc3c",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 25.21,
+      "latency_ms": 7.31,
       "passed": true,
       "failure_reason": ""
     },
@@ -445,13 +523,18 @@
             "excerpt": "$18,995 Price starting from\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "17b1731f-c8e8-44ee-ae95-7f83d146e833",
+        "conversation_id": "90f9feb7-cbba-43f4-a2a8-a6f1e41f59b7",
         "needs_quote": true,
         "disclaimer": null,
         "language": "es",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "¿Qué tratamientos ofrece ITC?",
+          "¿Qué incluye el paquete de adenocarcinoma?",
+          "¿Dónde está ITC?"
+        ]
       },
-      "latency_ms": 2.99,
+      "latency_ms": 0.92,
       "passed": true,
       "failure_reason": ""
     },
@@ -482,13 +565,18 @@
             "excerpt": "$18,995 Price starting from\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "5c674d4a-cfd9-450c-b876-9ec26cd46148",
+        "conversation_id": "ceb5256d-fca6-4d9b-9646-7c329b829440",
         "needs_quote": true,
         "disclaimer": null,
         "language": "ar",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "ما العلاجات التي يقدمها مركز ITC؟",
+          "ماذا تشمل باقة علاج السرطان الغدي؟",
+          "أين يقع مركز ITC؟"
+        ]
       },
-      "latency_ms": 1.87,
+      "latency_ms": 0.74,
       "passed": true,
       "failure_reason": ""
     },
@@ -517,13 +605,19 @@
             "excerpt": "Included in the Out-Patient Program ($18,995 USD)\nThe Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed as standard within the 3-week program.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed in detail upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months.\n\nIncluded in the In-Patient Program ($30,000 USD)\nThe In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.\n24/7 Medical Supervision: Constant access to dedicated doctor and nursing care throughout the 3-week stay.\nFull Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).\nExtensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.\nDiagnostic Imaging: One prescribed X-ray, ultrasound, or CT scan included per doctor's orders.\nClinical Therapies: Full access to all program-specific alternative and integrative interventions.\nPharmacy Support: Medications specific to the in-patient protocol included and managed by staff."
           }
         ],
-        "conversation_id": "236eb3f6-4ee4-4528-a827-381c11cead1a",
+        "conversation_id": "e0d43674-8d96-4e27-b1f5-f544a071f1c8",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 28.65,
+      "latency_ms": 6.85,
       "passed": true,
       "failure_reason": ""
     },
@@ -543,13 +637,19 @@
         "status": "out_of_scope",
         "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "9e2b8748-b418-4d04-bcb9-b51fd0f80a23",
+        "conversation_id": "913dd78d-df31-4d5a-8350-ddd384d20a49",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 0.19,
+      "latency_ms": 0.1,
       "passed": true,
       "failure_reason": ""
     },
@@ -569,13 +669,19 @@
         "status": "out_of_scope",
         "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "8cabc5b3-3696-425a-ae04-87772651116f",
+        "conversation_id": "39b46ed2-60f3-4fce-bb6c-caa558900644",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 0.09,
+      "latency_ms": 0.06,
       "passed": true,
       "failure_reason": ""
     },
@@ -592,13 +698,14 @@
         "status": "medical_safety",
         "answer": "I cannot determine whether this treatment is safe or appropriate for your medical situation, or promise a cure or outcome. Please discuss it with a qualified healthcare professional.",
         "sources": [],
-        "conversation_id": "051acbbc-24ff-45e4-b3ec-8be123f2d7fb",
+        "conversation_id": "d496d614-b9dd-4bd6-8eed-557e99a07a70",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": []
       },
-      "latency_ms": 0.29,
+      "latency_ms": 0.06,
       "passed": true,
       "failure_reason": ""
     },
@@ -618,13 +725,14 @@
         "status": "privacy",
         "answer": "Please don’t share names, email addresses, phone numbers, or personal medical histories here. I can help with general questions about the approved website pages. Your message has not been sent to the AI provider.",
         "sources": [],
-        "conversation_id": "81828921-8a02-4850-b31e-4df509d62403",
+        "conversation_id": "40fa958f-a516-4d84-a4a0-f2c2e0689978",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": []
       },
-      "latency_ms": 0.22,
+      "latency_ms": 0.04,
       "passed": true,
       "failure_reason": ""
     },
@@ -643,13 +751,19 @@
         "status": "answered",
         "answer": "You can request a free quote directly from PlacidWay using the link below. I haven’t submitted any details or created a booking.",
         "sources": [],
-        "conversation_id": "de304186-dd85-4aa0-b3d8-53c347b2b8e4",
+        "conversation_id": "a3beb51b-905f-4d65-b860-4b532b1d25f9",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 0.83,
+      "latency_ms": 0.27,
       "passed": true,
       "failure_reason": ""
     },
@@ -678,13 +792,18 @@
             "excerpt": "About ITC Immunity Therapy Center\nFounded by Dr. Carlos Bautista, ITC - Immunity Therapy Center has established itself as a center focused on individualized care. Dr. Carlos Bautista brings decades of dedicated clinical research and medical leadership to the facility, prioritizing patient dignity, individualized care, and holistic biological preservation.\nLocated in Tijuana, Mexico—just minutes across the U.S. border—the center delivers progressive care pathways to international patients who are searching for alternative cancer treatment abroad in a modern, supportive medical setting.\n\nPatient Travel and Support Services\nITC Immunity Therapy Center provides extensive logistical support for international visitors traveling to Tijuana, Mexico. The facility is located near San Diego International Airport (SAN), and dedicated shuttle services facilitate seamless border crossings and local transit to medical appointments and affiliated hotel accommodations.\n\nBy Plane\nSan Diego International Airport (SAN) is just 25 minutes from Tijuana. Many people from the U.S., Canada, and other countries like this option. ITC even offers free rides to and from the airport."
           }
         ],
-        "conversation_id": "358aa7f6-b239-48cf-b538-7fbcfeaea93c",
+        "conversation_id": "81b7bd52-a3d2-41a3-9db4-6653725644b4",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?"
+        ]
       },
-      "latency_ms": 27.64,
+      "latency_ms": 7.54,
       "passed": true,
       "failure_reason": ""
     },
@@ -710,13 +829,19 @@
             "excerpt": "Video titles\nStep-by-Step: Comprehensive Alternative Cancer Treatment at ITC Mexico\n\nVideo titles\nStage 4 Cancer to No Evidence of Disease at ITC – Martin’s Miracle Story\n\nVideo titles\nManaging Medical Records for International Healthcare and Medical Tourism in Tijuana, Mexico – Best Practices"
           }
         ],
-        "conversation_id": "667d00f2-151a-49a8-84db-0cd8f5c9cc85",
+        "conversation_id": "c06f3123-6723-4965-a9a0-36105cf20726",
         "needs_quote": false,
         "disclaimer": "This describes website content, including provider claims. It does not establish clinical effectiveness or suitability for an individual.",
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 50.05,
+      "latency_ms": 8.61,
       "passed": true,
       "failure_reason": ""
     },
@@ -733,13 +858,19 @@
         "status": "unknown",
         "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "sources": [],
-        "conversation_id": "04f72b2b-81fd-438b-a06c-aac9b207e23f",
+        "conversation_id": "f4912551-98ac-490d-883e-5b0f0ea9a9ad",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 46.61,
+      "latency_ms": 7.92,
       "passed": true,
       "failure_reason": ""
     },
@@ -756,13 +887,19 @@
         "status": "unknown",
         "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "sources": [],
-        "conversation_id": "cde7ac62-3dfb-45a9-ae66-c4c6a771f449",
+        "conversation_id": "766bccf7-6781-478d-b577-a966000e053d",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 1.52,
+      "latency_ms": 0.44,
       "passed": true,
       "failure_reason": ""
     },
@@ -780,13 +917,19 @@
         "status": "out_of_scope",
         "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "dac646e9-59af-422b-8728-cfbc70f3d238",
+        "conversation_id": "356abe11-3401-4a1e-8b7b-742e767a7151",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": null
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 0.53,
+      "latency_ms": 0.07,
       "passed": true,
       "failure_reason": ""
     },
@@ -818,13 +961,19 @@
             "excerpt": "Program Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "ff8390f5-5bbc-47d1-b00f-f1e6d65b6c0c",
+        "conversation_id": "ccf186fa-1e3c-4c14-944a-36c9deb64372",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 4.35,
+      "latency_ms": 0.87,
       "passed": true,
       "failure_reason": ""
     },
@@ -839,15 +988,21 @@
       "source_ids": [],
       "actual": {
         "status": "unknown",
-        "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
+        "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "3c4c6b64-256d-4929-9450-3e3d99acce44",
-        "needs_quote": true,
+        "conversation_id": "fea3dfa1-228a-4cd5-89a3-ddd67bda727a",
+        "needs_quote": false,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": null,
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 2.39,
+      "latency_ms": 0.63,
       "passed": true,
       "failure_reason": ""
     },
@@ -870,13 +1025,19 @@
         "status": "unknown",
         "answer": "I couldn’t verify a price for that exact treatment and location in the approved pages. Please request a free quote from PlacidWay.",
         "sources": [],
-        "conversation_id": "19951199-1669-4414-8bf5-33a99cbbf6df",
+        "conversation_id": "75a99beb-49c6-48fa-bac7-77cc77532a2d",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
-        "quote_url": "https://www.placidway.com/request-info"
+        "quote_url": "https://www.placidway.com/request-info",
+        "suggested_questions": [
+          "What treatments does ITC offer?",
+          "What is included in the adenocarcinoma package?",
+          "How much does the adenocarcinoma package cost in Mexico?",
+          "Where is ITC located?"
+        ]
       },
-      "latency_ms": 4.07,
+      "latency_ms": 0.58,
       "passed": true,
       "failure_reason": ""
     }

@@ -60,12 +60,40 @@ test("a simple greeting gets a welcome without an irrelevant quote link", async 
   await page.getByLabel("Your question").fill("HI");
   await page.getByRole("button", { name: "Send message" }).click();
   await expect(page.locator(".assistant .answer-copy").last()).toContainText(
-    "Hi! Ask me",
+    "Hi! How can I help you today?",
   );
   await expect(page.locator(".assistant .answer-copy").last()).not.toContainText(
     "couldn’t verify",
   );
   await expect(page.locator(".assistant .quote-link")).toHaveCount(0);
+  await expect(page.locator(".assistant .followup-suggestions button")).toHaveCount(
+    4,
+  );
+  await page.screenshot({
+    path: "../artifacts/screenshots/greeting-suggestions.png",
+    fullPage: true,
+  });
+  await page
+    .getByRole("button", { name: "What treatments does ITC offer?" })
+    .click();
+  await expect(page.locator(".assistant .citations").last()).toBeVisible();
+  await page.getByLabel("Your question").fill("Tell me a joke");
+  await page.getByRole("button", { name: "Send message" }).click();
+  await expect(page.locator(".assistant").last()).toContainText(
+    "I can help with the treatments",
+  );
+  await expect(page.locator(".assistant").last().locator(".quote-link")).toHaveCount(0);
+  await expect(
+    page.locator(".assistant").last().locator(".followup-suggestions button"),
+  ).toHaveCount(4);
+  await page.getByLabel("Your question").fill("How much does the package cost?");
+  await page.getByRole("button", { name: "Send message" }).click();
+  await expect(page.locator(".assistant").last()).toContainText(
+    "Which treatment package do you mean",
+  );
+  await expect(
+    page.locator(".assistant").last().locator(".followup-suggestions button"),
+  ).toHaveCount(3);
 });
 
 test("mobile Arabic input and menu remain usable without horizontal overflow", async ({

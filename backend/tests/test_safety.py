@@ -14,6 +14,8 @@ from app.schemas import ChatRequest
         ("Is this surgery safe for my diabetes?", "medical_safety"),
         ("I have cancer. Which treatment should I get?", "medical_safety"),
         ("What is the weather in Cancun?", "out_of_scope"),
+        ("Tell me a joke about ITC", "out_of_scope"),
+        ("What is ITC stock price?", "out_of_scope"),
         ("Will ITC guarantee a cure?", "medical_safety"),
         ("Where is Paris?", "unsupported_topic"),
         ("What is the dental implant price in Mexico?", "unsupported_topic"),
@@ -44,6 +46,12 @@ def test_context_switch_changes_treatment():
         {"topic": "adenocarcinoma", "countries": ["Mexico"]},
     )
     assert q.topic == "anal cancer"
+
+
+def test_generic_clinic_context_does_not_choose_a_package():
+    q = analyze("How much does the package cost?", {"topic": "ITC"})
+    assert q.intent == "clarify_topic"
+    assert q.topic == ""
 
 
 def test_model_query_contains_only_fixed_vocabulary():
@@ -104,7 +112,13 @@ def test_available_is_not_a_lab_question():
 
 @pytest.mark.parametrize(
     "message,language",
-    [("HI", "en"), ("Hello!", "en"), ("Hola", "es"), ("مرحبا", "ar")],
+    [
+        ("HI", "en"),
+        ("Hello!", "en"),
+        ("Hi, how are you?", "en"),
+        ("Hola", "es"),
+        ("مرحبا", "ar"),
+    ],
 )
 def test_greeting_is_not_an_unsupported_knowledge_request(message, language):
     query = analyze(message)
@@ -117,3 +131,21 @@ def test_greeting_before_a_real_question_does_not_hide_the_question():
     query = analyze("Hi, what is the adenocarcinoma package price?")
     assert query.intent == "pricing"
     assert query.topic == "adenocarcinoma"
+
+
+@pytest.mark.parametrize(
+    "message,intent",
+    [
+        ("What can you do?", "help"),
+        ("Help me!", "help"),
+        ("Hi, can you help me?", "help"),
+        ("Hola, que puedes hacer?", "help"),
+        ("مرحبا كيف يمكنك مساعدتي؟", "help"),
+        ("Thanks", "thanks"),
+        ("How much does the package cost?", "clarify_topic"),
+    ],
+)
+def test_social_and_ambiguous_package_requests_get_useful_responses(message, intent):
+    query = analyze(message)
+    assert query.intent == intent
+    assert query.block == ""

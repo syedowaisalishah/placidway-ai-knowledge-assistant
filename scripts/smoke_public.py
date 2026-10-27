@@ -37,6 +37,7 @@ def main():
             json={"message": "What is the price for an adenocarcinoma package in Atlantis?"},
         )
         greeting = client.post("/api/chat", json={"message": "HI"})
+        unrelated = client.post("/api/chat", json={"message": "Tell me a joke"})
         admin = client.get("/api/admin/unanswered")
     health_data = health.json() if health.status_code == 200 else {}
     knowledge_data = knowledge.json() if knowledge.status_code == 200 else {}
@@ -44,6 +45,7 @@ def main():
     starting_data = starting.json() if starting.status_code == 200 else {}
     unknown_data = unknown.json() if unknown.status_code == 200 else {}
     greeting_data = greeting.json() if greeting.status_code == 200 else {}
+    unrelated_data = unrelated.json() if unrelated.status_code == 200 else {}
     source_urls = [source["url"] for source in price_data.get("sources", [])]
     checks = {
         "page_served": page.status_code == 200 and b"PlacidWay" in page.content,
@@ -59,6 +61,8 @@ def main():
         and "3 Weeks" in price_data.get("answer", "")
         and bool(source_urls)
         and all(url in approved for url in source_urls),
+        "grounded_answer_offers_followups": price.status_code == 200
+        and len(price_data.get("suggested_questions", [])) >= 3,
         "starting_qualifier_preserved": starting.status_code == 200
         and starting_data.get("status") == "answered"
         and "starting from" in starting_data.get("answer", "")
@@ -67,9 +71,14 @@ def main():
         and unknown_data.get("status") != "answered",
         "greeting_welcomes_without_quote": greeting.status_code == 200
         and greeting_data.get("status") == "answered"
-        and greeting_data.get("answer", "").startswith("Hi! Ask me")
+        and greeting_data.get("answer", "").startswith("Hi! How can I help")
         and not greeting_data.get("needs_quote")
-        and not greeting_data.get("quote_url"),
+        and not greeting_data.get("quote_url")
+        and len(greeting_data.get("suggested_questions", [])) == 4,
+        "unrelated_question_redirects_without_quote": unrelated.status_code == 200
+        and unrelated_data.get("status") == "out_of_scope"
+        and not unrelated_data.get("needs_quote")
+        and len(unrelated_data.get("suggested_questions", [])) == 4,
         "admin_protected": admin.status_code == 401,
     }
     result = {
@@ -86,6 +95,7 @@ def main():
             "starting": starting.status_code,
             "unknown": unknown.status_code,
             "greeting": greeting.status_code,
+            "unrelated": unrelated.status_code,
             "admin": admin.status_code,
         },
         "price_source_urls": source_urls,

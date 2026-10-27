@@ -48,6 +48,8 @@ The portable snapshot contains chunks, structured prices, float32 vectors, and a
 
 Raw visitor messages are analyzed locally. Only intent, treatment, clinic, destination, program, and aspect values from fixed vocabularies enter the Gemini request. Visitor names, contact details, medical narratives, and entire chat histories are not forwarded. Pattern-based privacy detection is imperfect, so not sending raw messages is the stronger privacy safeguard.
 
+Greetings, help requests, thanks, and ambiguous package questions receive local conversational replies. The API supplies fixed, localized suggested questions that were checked against the current seven-page index; the interface shows them as clickable follow-ups. An unrelated question receives a scope explanation and suggestions without an irrelevant quote prompt. Factual treatment and price answers still require source evidence and citations.
+
 Conversation memory stores those bounded topic fields for at most 30 minutes, with a 1,000-session cap. It never treats a previous assistant answer as evidence. Context is process-local and is lost on restart. The frontend keeps chat messages only in React state, not localStorage.
 
 Retrieval combines normalized cosine similarity with lexical overlap and intent-heading relevance. A named cancer package restricts retrieval to its exact approved page. Pricing uses structured records for the exact treatment, location, clinic, and program. Conflicting rows for an identical price identity cause abstention. A package price cannot establish an unlisted component cost.

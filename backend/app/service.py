@@ -14,7 +14,7 @@ from app.conversation import ConversationStore
 from app.generation.gemini import GeminiGenerator, GenerationUnavailable
 from app.grounding.verify import eligible_hits, extractive_selection, validate_answer
 from app.retrieval.store import KnowledgeStore
-from app.safety.messages import MESSAGES
+from app.safety.messages import MESSAGES, PACKAGE_SUGGESTIONS, SUGGESTIONS
 from app.safety.query import analyze
 from app.schemas import ChatRequest, ChatResponse, Citation
 
@@ -98,6 +98,12 @@ class ChatService:
         session_id, context = self.sessions.get(request.conversation_id)
         query = analyze(request.message, context, request.language)
         messages = MESSAGES[query.language]
+        normalized_request = request.message.casefold().rstrip("?.؟")
+        suggested_questions = [
+            question
+            for question in SUGGESTIONS[query.language]
+            if question.casefold().rstrip("?.؟") != normalized_request
+        ]
 
         def fallback(key: str, status: str = "unknown", quote: bool = False):
             self.unanswered.record(query, key)
@@ -108,26 +114,48 @@ class ChatService:
                 language=query.language,
                 needs_quote=quote,
                 quote_url=self.knowledge.quote_url() if quote else None,
+                suggested_questions=(
+                    suggested_questions
+                    if key
+                    in (
+                        "unknown",
+                        "price_unknown",
+                        "out_of_scope",
+                        "multiple_treatments",
+                        "comparison",
+                        "recovery",
+                    )
+                    else []
+                ),
             )
 
         if query.block:
             if query.block in ("privacy", "medical_safety", "out_of_scope"):
                 return fallback(query.block, query.block)
+            if query.block == "unsupported_topic" and not query.topic:
+                return fallback("out_of_scope", "unknown")
             return fallback(
                 "multiple_treatments"
                 if query.block == "multiple_treatments"
                 else "unknown",
-                quote=True,
+                quote=query.block != "multiple_treatments",
             )
         status = await asyncio.to_thread(self.knowledge.status)
         if not status["ready"]:
             return fallback("knowledge_unavailable", "unavailable")
-        if query.intent == "greeting":
+        if query.intent in ("greeting", "help", "thanks", "clarify_topic"):
             return ChatResponse(
                 status="answered",
-                answer=messages["greeting"],
+                answer=messages[query.intent],
                 conversation_id=session_id,
                 language=query.language,
+                suggested_questions=(
+                    PACKAGE_SUGGESTIONS[query.language]
+                    if query.intent == "clarify_topic"
+                    else suggested_questions
+                    if query.intent != "thanks"
+                    else []
+                ),
             )
         if query.intent in ("quote", "booking"):
             return ChatResponse(
@@ -138,6 +166,7 @@ class ChatService:
                 language=query.language,
                 needs_quote=True,
                 quote_url=self.knowledge.quote_url(),
+                suggested_questions=suggested_questions,
             )
         self.sessions.update(session_id, query)
         if query.intent == "comparison":
@@ -173,6 +202,7 @@ class ChatService:
                 language=query.language,
                 needs_quote=True,
                 quote_url=self.knowledge.quote_url(),
+                suggested_questions=suggested_questions,
             )
         try:
             hits = await asyncio.to_thread(self.knowledge.retrieve, query)
@@ -227,4 +257,5 @@ class ChatService:
             conversation_id=session_id,
             language=query.language,
             disclaimer=messages["medical_note"] if medical else None,
+            suggested_questions=suggested_questions,
         )

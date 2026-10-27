@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-10-27T15:42:19.892795+00:00",
+  "checked_at_utc": "2026-10-27T16:36:28.187240+00:00",
   "base_url": "https://position-comparable-result-footage.trycloudflare.com",
   "mode": "extractive",
   "gemini_configured": false,
@@ -8,9 +8,11 @@
     "health_ready": true,
     "seven_sources_indexed": true,
     "price_grounded": true,
+    "grounded_answer_offers_followups": true,
     "starting_qualifier_preserved": true,
     "unknown_destination_abstained": true,
     "greeting_welcomes_without_quote": true,
+    "unrelated_question_redirects_without_quote": true,
     "admin_protected": true
   },
   "http_statuses": {
@@ -21,6 +23,7 @@
     "starting": 200,
     "unknown": 200,
     "greeting": 200,
+    "unrelated": 200,
     "admin": 401
   },
   "price_source_urls": [

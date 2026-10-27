@@ -67,16 +67,19 @@ const labels = {
     placeholder: "Ask about a treatment, package, or price…",
     send: "Send message",
     language: "English",
+    suggestions: "You could ask",
   },
   es: {
     placeholder: "Pregunta sobre un tratamiento, paquete o precio…",
     send: "Enviar mensaje",
     language: "Español",
+    suggestions: "Puedes preguntar",
   },
   ar: {
     placeholder: "اسأل عن علاج أو باقة أو سعر…",
     send: "إرسال الرسالة",
     language: "العربية",
+    suggestions: "يمكنك أن تسأل",
   },
 };
 
@@ -88,7 +91,15 @@ function Mark({ small = false }: { small?: boolean }) {
   );
 }
 
-function AssistantMessage({ message }: { message: Message }) {
+function AssistantMessage({
+  message,
+  onSuggestion,
+  busy,
+}: {
+  message: Message;
+  onSuggestion: (question: string) => void;
+  busy: boolean;
+}) {
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
   const response = message.response;
@@ -104,7 +115,7 @@ function AssistantMessage({ message }: { message: Message }) {
         <div className="message-name">
           PlacidWay assistant{" "}
           <span>
-            {response?.status === "answered"
+            {response?.sources.length
               ? "SOURCE-GROUNDED"
               : "KNOWLEDGE GUIDE"}
           </span>
@@ -161,6 +172,23 @@ function AssistantMessage({ message }: { message: Message }) {
           >
             Request a quote from PlacidWay <ArrowRight size={15} />
           </a>
+        )}
+        {!!response?.suggested_questions?.length && (
+          <div className="followup-suggestions">
+            <span>{labels[response.language].suggestions}</span>
+            <div>
+              {response.suggested_questions.map((question) => (
+                <button
+                  type="button"
+                  key={question}
+                  onClick={() => onSuggestion(question)}
+                  disabled={busy}
+                >
+                  {question} <ArrowUp size={13} />
+                </button>
+              ))}
+            </div>
+          </div>
         )}
         {!message.error && (
           <div className="message-actions">
@@ -621,7 +649,12 @@ export function ChatApp() {
                           <div dir="auto">{message.text}</div>
                         </article>
                       ) : (
-                        <AssistantMessage key={message.id} message={message} />
+                        <AssistantMessage
+                          key={message.id}
+                          message={message}
+                          onSuggestion={(question) => void submit(question)}
+                          busy={busy}
+                        />
                       ),
                     )}
                     {busy && (

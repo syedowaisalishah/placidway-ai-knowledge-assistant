@@ -1,6 +1,48 @@
+SUGGESTIONS = {
+    "en": [
+        "What treatments does ITC offer?",
+        "What is included in the adenocarcinoma package?",
+        "How much does the adenocarcinoma package cost in Mexico?",
+        "Where is ITC located?",
+    ],
+    "es": [
+        "¿Qué tratamientos ofrece ITC?",
+        "¿Qué incluye el paquete de adenocarcinoma?",
+        "¿Cuánto cuesta el tratamiento de adenocarcinoma en México?",
+        "¿Dónde está ITC?",
+    ],
+    "ar": [
+        "ما العلاجات التي يقدمها مركز ITC؟",
+        "ماذا تشمل باقة علاج السرطان الغدي؟",
+        "ما تكلفة علاج السرطان الغدي في المكسيك؟",
+        "أين يقع مركز ITC؟",
+    ],
+}
+
+PACKAGE_SUGGESTIONS = {
+    "en": [
+        "What is included in the adenocarcinoma package?",
+        "What is included in the adrenal cancer package?",
+        "What is included in the anal cancer package?",
+    ],
+    "es": [
+        "¿Qué incluye el paquete de adenocarcinoma?",
+        "¿Qué incluye el paquete de cáncer suprarrenal?",
+        "¿Qué incluye el paquete de cáncer anal?",
+    ],
+    "ar": [
+        "ماذا تشمل باقة علاج السرطان الغدي؟",
+        "ماذا تشمل باقة علاج سرطان الغدة الكظرية؟",
+        "ماذا تشمل باقة علاج سرطان الشرج؟",
+    ],
+}
+
 MESSAGES = {
     "en": {
-        "greeting": "Hi! Ask me about ITC Immunity Therapy Center, its listed cancer treatment packages, or prices shown in the seven approved PlacidWay pages. For example: ‘What is the listed adenocarcinoma package price?’",
+        "greeting": "Hi! How can I help you today? I can explain the ITC clinic, its listed cancer treatment packages, and prices shown in the seven approved PlacidWay pages. Choose a question below or ask your own.",
+        "help": "I can answer questions supported by the seven approved PlacidWay pages. What would you like to know about ITC, a listed package, or its published price? Try one of these questions:",
+        "thanks": "You’re welcome! Is there anything else you’d like to know about the listed treatments, packages, or prices?",
+        "clarify_topic": "Which treatment package do you mean: adenocarcinoma, adrenal cancer, or anal cancer? Pick a question below or tell me the treatment name.",
         "unknown": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "price_unknown": "I couldn’t verify a price for that exact treatment and location in the approved pages. Please request a free quote from PlacidWay.",
         "out_of_scope": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
@@ -20,7 +62,10 @@ MESSAGES = {
         "price_note": "Confirm the current price, inclusions, exclusions, and availability with the provider.",
     },
     "es": {
-        "greeting": "¡Hola! Puedo ayudarte con la información sobre ITC Immunity Therapy Center, sus paquetes de tratamiento y los precios publicados en las siete páginas aprobadas de PlacidWay. Por ejemplo: «¿Cuál es el precio publicado del paquete de adenocarcinoma?»",
+        "greeting": "¡Hola! ¿En qué puedo ayudarte hoy? Puedo explicar la información sobre ITC, sus paquetes y los precios publicados en las siete páginas aprobadas de PlacidWay. Elige una pregunta o escribe la tuya.",
+        "help": "Puedo responder preguntas respaldadas por las siete páginas aprobadas de PlacidWay. ¿Qué quieres saber sobre ITC, un paquete o su precio publicado?",
+        "thanks": "¡De nada! ¿Quieres saber algo más sobre los tratamientos, paquetes o precios publicados?",
+        "clarify_topic": "¿A qué paquete te refieres: adenocarcinoma, cáncer suprarrenal o cáncer anal? Elige una pregunta o dime el tratamiento.",
         "unknown": "No pude verificar esa información en las siete páginas aprobadas de PlacidWay. Puedes contactar a PlacidWay para una cotización gratuita o una aclaración.",
         "price_unknown": "No pude verificar un precio para ese tratamiento y destino exactos. Solicita una cotización gratuita a PlacidWay.",
         "out_of_scope": "Puedo ayudar con la información de tratamientos, clínicas y precios de las siete páginas aprobadas. No puedo responder esa solicitud con esas fuentes.",
@@ -40,7 +85,10 @@ MESSAGES = {
         "price_note": "Confirma el precio actual, las inclusiones y exclusiones con el proveedor.",
     },
     "ar": {
-        "greeting": "مرحباً! يمكنني مساعدتك بمعلومات مركز ITC وباقات العلاج والأسعار المنشورة في صفحات PlacidWay السبع المعتمدة. مثال: «ما السعر المنشور لباقة علاج السرطان الغدي؟»",
+        "greeting": "مرحباً! كيف يمكنني مساعدتك اليوم؟ يمكنني شرح معلومات مركز ITC وباقات العلاج والأسعار المنشورة في صفحات PlacidWay السبع المعتمدة. اختر سؤالاً أدناه أو اكتب سؤالك.",
+        "help": "يمكنني الإجابة عن الأسئلة التي تدعمها صفحات PlacidWay السبع المعتمدة. ماذا تريد أن تعرف عن مركز ITC أو باقة علاج أو سعرها المنشور؟",
+        "thanks": "على الرحب والسعة! هل لديك سؤال آخر عن العلاجات أو الباقات أو الأسعار المنشورة؟",
+        "clarify_topic": "أي باقة تقصد: السرطان الغدي أم سرطان الغدة الكظرية أم سرطان الشرج؟ اختر سؤالاً أو اذكر اسم العلاج.",
         "unknown": "لم أتمكن من التحقق من هذه المعلومات في صفحات PlacidWay السبع المعتمدة. يمكنك التواصل مع PlacidWay لطلب عرض سعر مجاني أو توضيح.",
         "price_unknown": "لم أتمكن من التحقق من سعر هذا العلاج في الوجهة المطلوبة. يرجى طلب عرض سعر مجاني من PlacidWay.",
         "out_of_scope": "يمكنني المساعدة بمعلومات العلاجات والعيادات والأسعار الواردة في الصفحات السبع المعتمدة فقط.",

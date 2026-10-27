@@ -20,6 +20,7 @@ export type ChatResponse = {
   disclaimer: string | null;
   language: Language;
   quote_url: string | null;
+  suggested_questions: string[];
 };
 export type Message = {
   id: string;

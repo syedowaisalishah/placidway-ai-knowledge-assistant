@@ -84,6 +84,7 @@ class ChatResponse(BaseModel):
     disclaimer: str | None = None
     language: str = "en"
     quote_url: str | None = None
+    suggested_questions: list[str] = Field(default_factory=list)
 
 
 class EvidenceSelection(BaseModel):

@@ -775,6 +775,46 @@ textarea:focus {
   margin-top: 8px;
   background: #f5faf9;
 }
+.followup-suggestions {
+  margin-top: 18px;
+}
+.followup-suggestions > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #718998;
+  font-size: 10px;
+  font-weight: 600;
+}
+.followup-suggestions > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.followup-suggestions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  border: 1px solid #d8e9e6;
+  border-radius: 8px;
+  background: #f7fbfa;
+  color: #286f70;
+  padding: 8px 10px;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: start;
+}
+.followup-suggestions button:hover:not(:disabled) {
+  border-color: #94c8bf;
+  background: #edf7f4;
+}
+.followup-suggestions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.followup-suggestions button svg {
+  flex: none;
+}
 .medical-note {
   display: flex;
   gap: 7px;
