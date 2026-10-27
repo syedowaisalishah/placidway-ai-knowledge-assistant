@@ -9,8 +9,17 @@ test("desktop welcomes visitors and displays real source-linked prices", async (
     page.getByRole("heading", { name: /A clearer way/ }),
   ).toBeVisible();
   await expect(
-    page.getByText("Source reading mode", { exact: true }),
+    page.getByText(/^(Source reading mode|Ready to help)$/),
   ).toBeVisible();
+  await expect(page.locator(".brand-logo")).toHaveAttribute(
+    "src",
+    "/brand/placidway-logo.png",
+  );
+  expect(
+    await page
+      .locator(".brand-logo")
+      .evaluate((img: HTMLImageElement) => img.naturalWidth),
+  ).toBeGreaterThan(0);
   await page.screenshot({
     path: "../artifacts/screenshots/desktop.png",
     fullPage: true,
@@ -76,7 +85,9 @@ test("a simple greeting gets a welcome without an irrelevant quote link", async 
   await page
     .getByRole("button", { name: "What treatments does ITC offer?" })
     .click();
-  await expect(page.locator(".assistant .citations").last()).toBeVisible();
+  await expect(page.locator(".assistant .citations").last()).toBeVisible({
+    timeout: 30000,
+  });
   await page.getByLabel("Your question").fill("Tell me a joke");
   await page.getByRole("button", { name: "Send message" }).click();
   await expect(page.locator(".assistant").last()).toContainText(

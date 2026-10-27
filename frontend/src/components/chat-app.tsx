@@ -14,7 +14,6 @@ import {
   ExternalLink,
   FileText,
   Globe2,
-  HeartPulse,
   Layers3,
   Menu,
   MessageSquare,
@@ -86,7 +85,7 @@ const labels = {
 function Mark({ small = false }: { small?: boolean }) {
   return (
     <span className={`brand-mark ${small ? "small" : ""}`} aria-hidden="true">
-      <HeartPulse size={small ? 19 : 25} strokeWidth={1.8} />
+      <Sparkles size={small ? 18 : 23} strokeWidth={1.8} />
     </span>
   );
 }
@@ -389,10 +388,14 @@ export function ChatApp() {
         aria-label="Main navigation"
       >
         <a href="/" className="brand">
-          <Mark />
-          <span>
-            placidway<span className="brand-sub">KNOWLEDGE ASSISTANT</span>
-          </span>
+          <img
+            className="brand-logo"
+            src="/brand/placidway-logo.png"
+            alt="PlacidWay"
+            width="170"
+            height="86"
+          />
+          <span className="brand-sub">AI KNOWLEDGE ASSISTANT</span>
         </a>
         <div className="workspace-label">YOUR HEALTHCARE GUIDE</div>
         <button className="new-chat" onClick={clearChat}>
@@ -472,7 +475,14 @@ export function ChatApp() {
             >
               <Menu size={21} />
             </button>
-            <span>PlacidWay AI Knowledge Assistant</span>
+            <img
+              className="topbar-logo"
+              src="/brand/placidway-logo.png"
+              alt="PlacidWay"
+              width="94"
+              height="47"
+            />
+            <span>AI Knowledge Assistant</span>
             <span className="beta-tag">BETA</span>
           </div>
           <div className="topbar-right">

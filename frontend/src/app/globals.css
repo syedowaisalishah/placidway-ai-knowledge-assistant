@@ -1403,6 +1403,291 @@ textarea:focus {
     font-size: 23px;
   }
 }
+
+/* PlacidWay visual theme, based on the public site and its official logo. */
+:root {
+  --ink: #262626;
+  --muted: #686868;
+  --teal: #ec5b53;
+  --line: #e9e9e9;
+  --navy: #252525;
+  --paper: #f6f6f6;
+}
+body {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Arial, Helvetica, sans-serif;
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline-color: var(--teal);
+}
+.sidebar {
+  background: #fff;
+  border-right-color: #e9e9e9;
+}
+.brand {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  margin: -12px 4px 35px;
+  letter-spacing: normal;
+}
+.brand-logo {
+  display: block;
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+}
+.brand-sub {
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  margin: -5px 0 0 18px;
+}
+.brand-mark {
+  background: var(--teal);
+  border-radius: 10px;
+}
+.workspace-label,
+.source-category,
+.citation-label {
+  color: #888;
+}
+.new-chat {
+  border-color: #f1b8b4;
+  color: var(--teal);
+  border-radius: 8px;
+}
+.new-chat:hover,
+.nav-items button:hover,
+.sidebar-topics button:hover {
+  background: #fff3f2;
+  color: #d74840;
+}
+.nav-items button {
+  color: #555;
+}
+.nav-items button.active {
+  background: #fff0ef;
+  color: #df4d46;
+}
+.topic-dot {
+  background: var(--teal);
+}
+.trust-card {
+  background: #fff5f4;
+  border-color: #ffe0dd;
+  color: #5e5e5e;
+}
+.trust-card > svg,
+.trust-card button {
+  color: var(--teal);
+}
+.trust-card strong {
+  color: #323232;
+}
+.trust-card p,
+.sidebar-footer {
+  color: #777;
+}
+.topbar {
+  background: #fff;
+  border-bottom-color: #ececec;
+  box-shadow: 0 2px 8px #22222208;
+}
+.topbar-title {
+  gap: 13px;
+  color: #323232;
+  font-size: 13px;
+}
+.topbar-logo {
+  display: block;
+  width: 94px;
+  height: auto;
+  object-fit: contain;
+}
+.beta-tag {
+  border-color: #ffd7d3;
+  background: #fff5f4;
+  color: #d94d45;
+}
+.connection.ready i {
+  background: #45a763;
+  box-shadow: 0 0 0 3px #eaf7ee;
+}
+.icon-button:hover {
+  color: var(--teal);
+  background: #fff2f1;
+}
+.main-content {
+  background: #f7f7f7;
+}
+.welcome-emblem {
+  background: #fff;
+  border-color: #ffd5d1;
+  color: var(--teal);
+  box-shadow: 0 8px 25px #ec5b5314;
+}
+.emblem-orbit {
+  background: var(--teal);
+}
+.eyebrow,
+.welcome h1 span,
+.scope-pill svg,
+.welcome-trust svg {
+  color: var(--teal);
+}
+.welcome h1,
+.sources-page h1,
+.about-modal h2 {
+  color: #282828;
+  font-weight: 700;
+}
+.welcome-description,
+.page-description {
+  color: #666;
+}
+.scope-pill {
+  background: #fff;
+  border-color: #f0d6d3;
+  color: #666;
+}
+.scope-pill > span:first-of-type {
+  color: #383838;
+}
+.suggestion {
+  border-color: #eaeaea;
+  box-shadow: 0 3px 12px #22222206;
+}
+.suggestion:hover,
+.library-source:hover {
+  border-color: #ef756e;
+  box-shadow: 0 8px 25px #ec5b5314;
+}
+.suggestion-icon.blue,
+.suggestion-icon.teal,
+.suggestion-icon.violet,
+.suggestion-icon.amber {
+  background: #fff0ef;
+  color: var(--teal);
+}
+.suggestion strong {
+  color: #303030;
+}
+.suggestion > span:not(.suggestion-icon),
+.suggestion-arrow,
+.welcome-trust {
+  color: #717171;
+}
+.composer-area {
+  background: #f7f7f7;
+}
+.composer {
+  border-color: #dcdcdc;
+  box-shadow: 0 4px 20px #2222220a;
+}
+.composer:focus-within {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px #ffebe9;
+}
+.composer-tools select,
+.composer-footnote button {
+  color: #555;
+}
+.send-button,
+.primary-button {
+  background: var(--teal);
+}
+.send-button:hover {
+  background: #d94740;
+}
+.message.user > div {
+  background: #fff0ef;
+  color: #483432;
+}
+.message-name,
+.answer-copy strong {
+  color: #333;
+}
+.answer-copy {
+  color: #4f4f4f;
+}
+.answer-copy blockquote,
+.citation-evidence blockquote {
+  border-left-color: #f0a8a3;
+  color: #5d5d5d;
+}
+.citation,
+.library-source {
+  background: #fff;
+  border-color: #e7e7e7;
+}
+.citation summary,
+.source-summary > span:first-child,
+.citation-evidence a,
+.quote-link {
+  color: #d94d45;
+}
+.source-number,
+.library-icon {
+  background: #fff0ef;
+  color: var(--teal);
+}
+.quote-link,
+.followup-suggestions button {
+  border-color: #f3c8c4;
+  background: #fff5f4;
+  color: #d94d45;
+}
+.followup-suggestions button:hover:not(:disabled) {
+  border-color: var(--teal);
+  background: #ffebe9;
+}
+.medical-note,
+.about-privacy {
+  background: #fff5f4;
+  color: #775d5a;
+}
+.thinking-dots i {
+  background: var(--teal);
+}
+.source-state.indexed {
+  color: #26884b;
+  background: #eaf7ee;
+}
+.secondary-button {
+  background: #fff0ef;
+  color: #d94d45;
+}
+.modal-backdrop {
+  background: #17171780;
+}
+.about-modal {
+  box-shadow: 0 20px 80px #22222225;
+}
+.skip-link {
+  border-color: var(--teal);
+}
+@media (max-width: 800px) {
+  .topbar-logo {
+    width: 74px;
+  }
+  .topbar-title {
+    gap: 7px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 480px) {
+  .topbar-logo {
+    width: 58px;
+  }
+  .topbar-title > span:first-of-type {
+    max-width: 112px;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

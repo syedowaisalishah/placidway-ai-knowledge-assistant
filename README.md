@@ -8,6 +8,8 @@ The app answers only from the approved pages. It links each factual answer to it
 
 Visitors can greet the assistant, ask what it can do, or use clickable follow-up questions. A vague package question prompts for the treatment; an unrelated request gets a clear description of the seven-page scope. The suggested questions were checked against the approved index. The assistant still declines to invent facts beyond those pages.
 
+The interface uses the [official PlacidWay logo](https://www.placidway.com/frontend/images/PlacidWay-logo-opt.png) stored locally in `frontend/public/brand/` and a coral, white, and charcoal theme based on the current PlacidWay homepage. This visual branding does not expand the assistant's seven-page factual knowledge scope.
+
 See [chatbot limitations](docs/chatbot-limitations.md) for why some questions receive an unknown response and what expanding coverage would require. In particular, the assessment explicitly limits factual answers to the seven linked pages; the broader research note is not part of the chatbot index.
 
 ## Run locally
