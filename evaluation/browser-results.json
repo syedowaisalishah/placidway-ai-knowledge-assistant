@@ -119,12 +119,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3454,
+                  "duration": 3605,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-27T14:30:53.297Z",
+                  "startTime": "2026-10-27T15:41:40.245Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -153,12 +153,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1417,
+                  "duration": 1325,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-27T14:30:57.680Z",
+                  "startTime": "2026-10-27T15:41:44.252Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -169,6 +169,40 @@
           "id": "6dac514d5d837ca37b9e-7f95869b315dd325faf8",
           "file": "chat.spec.ts",
           "line": 45,
+          "column": 5
+        },
+        {
+          "title": "a simple greeting gets a welcome without an irrelevant quote link",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 910,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-27T15:41:45.619Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-133977acb69acaa84b7f",
+          "file": "chat.spec.ts",
+          "line": 56,
           "column": 5
         },
         {
@@ -187,12 +221,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1741,
+                  "duration": 1667,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-27T14:30:59.174Z",
+                  "startTime": "2026-10-27T15:41:46.578Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -202,7 +236,7 @@
           ],
           "id": "6dac514d5d837ca37b9e-c6d8f8dd9e97c2830093",
           "file": "chat.spec.ts",
-          "line": 56,
+          "line": 71,
           "column": 5
         },
         {
@@ -221,12 +255,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1049,
+                  "duration": 1263,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-27T14:31:00.957Z",
+                  "startTime": "2026-10-27T15:41:48.287Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -236,7 +270,7 @@
           ],
           "id": "6dac514d5d837ca37b9e-0eaeb38aed6f420473c3",
           "file": "chat.spec.ts",
-          "line": 90,
+          "line": 105,
           "column": 5
         }
       ]
@@ -244,9 +278,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-27T14:30:51.203Z",
-    "duration": 11012.051,
-    "expected": 4,
+    "startTime": "2026-10-27T15:41:38.873Z",
+    "duration": 10963.033,
+    "expected": 5,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

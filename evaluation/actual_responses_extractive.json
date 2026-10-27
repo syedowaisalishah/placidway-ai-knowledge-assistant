@@ -1,6 +1,6 @@
 {
   "mode": "extractive",
-  "run_at": "2026-10-27T14:11:54.018003+00:00",
+  "run_at": "2026-10-27T15:41:55.741501+00:00",
   "results": [
     {
       "id": "01",
@@ -30,13 +30,13 @@
             "excerpt": "$18,995 Price starting from\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "79fc7580-a44e-4caa-811a-ab90aac98159",
+        "conversation_id": "a20aa0f7-609b-4e09-bef2-87d696ced464",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 1449.26,
+      "latency_ms": 636.91,
       "passed": true,
       "failure_reason": ""
     },
@@ -56,13 +56,13 @@
         "status": "unknown",
         "answer": "I can’t establish a like-for-like price comparison from these pages. A similar procedure name does not confirm matching sessions, inclusions, or clinical needs. Please request itemized quotes for both options.",
         "sources": [],
-        "conversation_id": "8e31149a-3b8f-457e-8a69-6bbf204f45cf",
+        "conversation_id": "8b0f37d4-766c-453b-8bb6-52f000d0adb0",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 3.03,
+      "latency_ms": 1.2,
       "passed": true,
       "failure_reason": ""
     },
@@ -92,13 +92,13 @@
             "excerpt": "Included in the Out-Patient Program ($18,995 USD)\nThe Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed as standard within the 3-week program.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months.\n\nIncluded in the In-Patient Program ($30,000 USD)\nThe In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.\n24/7 Medical Supervision: Constant access to dedicated doctor and nursing care throughout the 3-week stay.\nFull Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).\nExtensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.\nDiagnostic Imaging: One prescribed X-ray, ultrasound, or CT scan included per doctor's orders.\nClinical Therapies: Full access to all program-specific alternative and integrative interventions.\nPharmacy Support: Medications specific to the in-patient protocol included and managed by staff.\nPost-Care: A follow-up consultation with an ITC doctor after 3 months."
           }
         ],
-        "conversation_id": "64547427-3dd6-45bb-8842-0327a7f9afad",
+        "conversation_id": "61138254-ded5-4954-9b2e-6bcd7ea7d5c7",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 995.46,
+      "latency_ms": 446.42,
       "passed": true,
       "failure_reason": ""
     },
@@ -122,13 +122,13 @@
         "status": "unknown",
         "answer": "I couldn’t verify a recovery timeline for this treatment in the approved pages. A program’s duration is not the same as recovery time. Please ask the treating clinician.",
         "sources": [],
-        "conversation_id": "c09d4a3d-7d10-47de-9854-c1dc95ee9f3f",
+        "conversation_id": "463fccc4-c360-4343-b4a3-d6df9b06a12f",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 63.66,
+      "latency_ms": 26.95,
       "passed": true,
       "failure_reason": ""
     },
@@ -151,13 +151,13 @@
         "status": "unknown",
         "answer": "I can’t book or confirm an appointment. Please contact PlacidWay directly to ask about availability and request a free quote.",
         "sources": [],
-        "conversation_id": "1a998496-f374-492e-9d7b-3fe60201b389",
+        "conversation_id": "372aceb2-d98d-45b2-90f8-0bdf59558fdb",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 1.47,
+      "latency_ms": 1.0,
       "passed": true,
       "failure_reason": ""
     },
@@ -178,13 +178,13 @@
         "status": "out_of_scope",
         "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "991624ba-99ab-4e74-82a0-b423f79761ea",
+        "conversation_id": "aa0458fd-7d0e-43a2-81b8-748b0a2d332c",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 0.32,
+      "latency_ms": 0.24,
       "passed": true,
       "failure_reason": ""
     },
@@ -204,13 +204,13 @@
         "status": "medical_safety",
         "answer": "I cannot determine whether this treatment is safe or appropriate for your medical situation, or promise a cure or outcome. Please discuss it with a qualified healthcare professional.",
         "sources": [],
-        "conversation_id": "42e0ef78-ef16-45ac-9e3c-21b7d3334bc0",
+        "conversation_id": "0e4876df-672d-44c9-a857-c4f0baa482cf",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 0.18,
+      "latency_ms": 0.16,
       "passed": true,
       "failure_reason": ""
     },
@@ -246,13 +246,13 @@
             "excerpt": "$18,995 Price starting from\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "277a9d35-f8b3-4e9a-8fa4-d97b47c88036",
+        "conversation_id": "883989ce-ec9d-4378-b130-96822a3d053f",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 11.57,
+      "latency_ms": 3.09,
       "passed": true,
       "failure_reason": ""
     },
@@ -269,13 +269,13 @@
         "status": "unknown",
         "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "sources": [],
-        "conversation_id": "ad27b903-e88f-4f35-ab20-59469966ad23",
+        "conversation_id": "2c0962f5-ffdf-449e-9a0b-971032352dec",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 1.94,
+      "latency_ms": 1.23,
       "passed": true,
       "failure_reason": ""
     },
@@ -295,13 +295,13 @@
         "status": "unknown",
         "answer": "I couldn’t verify a price for that exact treatment and location in the approved pages. Please request a free quote from PlacidWay.",
         "sources": [],
-        "conversation_id": "c6993040-9821-4c11-80f8-add74935b2e3",
+        "conversation_id": "7f4dc4da-80f9-45de-9d26-55c40d941d33",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 7.92,
+      "latency_ms": 2.95,
       "passed": true,
       "failure_reason": ""
     },
@@ -318,13 +318,13 @@
         "status": "unknown",
         "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "sources": [],
-        "conversation_id": "07ba2ae1-a0ae-4edd-b4ef-57a050660072",
+        "conversation_id": "9bc1a72d-8000-4b00-ae14-9d960e83fe6f",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 2.24,
+      "latency_ms": 1.49,
       "passed": true,
       "failure_reason": ""
     },
@@ -344,13 +344,13 @@
         "status": "unknown",
         "answer": "Please ask about one treatment at a time so I can match its exact package and supporting evidence.",
         "sources": [],
-        "conversation_id": "179b117b-8f08-432f-a7ec-164e33dd4e0f",
+        "conversation_id": "5a304d9d-9004-471a-82fb-0a8b856def99",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 0.49,
+      "latency_ms": 0.28,
       "passed": true,
       "failure_reason": ""
     },
@@ -376,13 +376,13 @@
             "excerpt": "Included in the Out-Patient Program ($18,995 USD)\nThe Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed on the program as included within the 3-week stay.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed in detail upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months.\n\nIncluded in the In-Patient Program ($30,000 USD)\nThe In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.\n24/7 Medical Supervision: Constant access to dedicated doctor and nursing care 24 hours a day throughout the stay.\nFull Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).\nExtensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.\nDiagnostic Imaging: One prescribed X-ray, ultrasound, or CT scan included per doctor's orders.\nClinical Therapies: Full access to all program-specific alternative and integrative interventions.\nPharmacy Support: Medications specific to the in-patient protocol included and managed by staff (discussed upon admission).\nFollow-up Care: One post-discharge medical consultation with an ITC doctor after 3 months."
           }
         ],
-        "conversation_id": "1153c6ad-045c-419b-98c6-ab19939d6e38",
+        "conversation_id": "f33bd901-bf55-4e1a-895b-5ac2fdf0bacb",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 75.73,
+      "latency_ms": 35.82,
       "passed": true,
       "failure_reason": ""
     },
@@ -408,13 +408,13 @@
             "excerpt": "Included in the Out-Patient Program ($18,995 USD)\nThe Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed as standard within the 3-week program.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed in detail upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months.\n\nIncluded in the In-Patient Program ($30,000 USD)\nThe In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.\n24/7 Medical Supervision: Constant access to dedicated doctor and nursing care throughout the 3-week stay.\nFull Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).\nExtensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.\nDiagnostic Imaging: One prescribed X-ray, ultrasound, or CT scan included per doctor's orders.\nClinical Therapies: Full access to all program-specific alternative and integrative interventions.\nPharmacy Support: Medications specific to the in-patient protocol included and managed by staff."
           }
         ],
-        "conversation_id": "67e73aed-d03d-452d-8796-19a1d82ceb98",
+        "conversation_id": "4b1487db-c8c2-4a82-828b-851210f771b4",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 43.25,
+      "latency_ms": 25.21,
       "passed": true,
       "failure_reason": ""
     },
@@ -445,13 +445,13 @@
             "excerpt": "$18,995 Price starting from\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "94efc4bb-e087-48a1-9cea-a3c80ad80882",
+        "conversation_id": "17b1731f-c8e8-44ee-ae95-7f83d146e833",
         "needs_quote": true,
         "disclaimer": null,
         "language": "es",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 5.13,
+      "latency_ms": 2.99,
       "passed": true,
       "failure_reason": ""
     },
@@ -482,13 +482,13 @@
             "excerpt": "$18,995 Price starting from\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "1f0fff11-a28d-4867-9f54-d90c091daa0a",
+        "conversation_id": "5c674d4a-cfd9-450c-b876-9ec26cd46148",
         "needs_quote": true,
         "disclaimer": null,
         "language": "ar",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 4.74,
+      "latency_ms": 1.87,
       "passed": true,
       "failure_reason": ""
     },
@@ -517,13 +517,13 @@
             "excerpt": "Included in the Out-Patient Program ($18,995 USD)\nThe Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed as standard within the 3-week program.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed in detail upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months.\n\nIncluded in the In-Patient Program ($30,000 USD)\nThe In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.\n24/7 Medical Supervision: Constant access to dedicated doctor and nursing care throughout the 3-week stay.\nFull Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).\nExtensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.\nDiagnostic Imaging: One prescribed X-ray, ultrasound, or CT scan included per doctor's orders.\nClinical Therapies: Full access to all program-specific alternative and integrative interventions.\nPharmacy Support: Medications specific to the in-patient protocol included and managed by staff."
           }
         ],
-        "conversation_id": "b57026ad-703d-4b6f-9b1a-03debc9ace0f",
+        "conversation_id": "236eb3f6-4ee4-4528-a827-381c11cead1a",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 55.47,
+      "latency_ms": 28.65,
       "passed": true,
       "failure_reason": ""
     },
@@ -543,13 +543,13 @@
         "status": "out_of_scope",
         "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "bb7b7c84-8769-419b-8752-24168525b02d",
+        "conversation_id": "9e2b8748-b418-4d04-bcb9-b51fd0f80a23",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 0.39,
+      "latency_ms": 0.19,
       "passed": true,
       "failure_reason": ""
     },
@@ -569,13 +569,13 @@
         "status": "out_of_scope",
         "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "bee1cdfc-f5d1-46a4-a37a-c8dbee672830",
+        "conversation_id": "8cabc5b3-3696-425a-ae04-87772651116f",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 0.21,
+      "latency_ms": 0.09,
       "passed": true,
       "failure_reason": ""
     },
@@ -592,13 +592,13 @@
         "status": "medical_safety",
         "answer": "I cannot determine whether this treatment is safe or appropriate for your medical situation, or promise a cure or outcome. Please discuss it with a qualified healthcare professional.",
         "sources": [],
-        "conversation_id": "ff344145-eff9-46e2-bdca-a9e21cdcb997",
+        "conversation_id": "051acbbc-24ff-45e4-b3ec-8be123f2d7fb",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 0.17,
+      "latency_ms": 0.29,
       "passed": true,
       "failure_reason": ""
     },
@@ -618,13 +618,13 @@
         "status": "privacy",
         "answer": "Please don’t share names, email addresses, phone numbers, or personal medical histories here. I can help with general questions about the approved website pages. Your message has not been sent to the AI provider.",
         "sources": [],
-        "conversation_id": "b7033d14-e4a2-48ea-8170-5e2e795c03cb",
+        "conversation_id": "81828921-8a02-4850-b31e-4df509d62403",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 0.12,
+      "latency_ms": 0.22,
       "passed": true,
       "failure_reason": ""
     },
@@ -643,13 +643,13 @@
         "status": "answered",
         "answer": "You can request a free quote directly from PlacidWay using the link below. I haven’t submitted any details or created a booking.",
         "sources": [],
-        "conversation_id": "12ea7e35-ac9a-4987-822f-6c63ad519796",
+        "conversation_id": "de304186-dd85-4aa0-b3d8-53c347b2b8e4",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 3.48,
+      "latency_ms": 0.83,
       "passed": true,
       "failure_reason": ""
     },
@@ -678,13 +678,13 @@
             "excerpt": "About ITC Immunity Therapy Center\nFounded by Dr. Carlos Bautista, ITC - Immunity Therapy Center has established itself as a center focused on individualized care. Dr. Carlos Bautista brings decades of dedicated clinical research and medical leadership to the facility, prioritizing patient dignity, individualized care, and holistic biological preservation.\nLocated in Tijuana, Mexico—just minutes across the U.S. border—the center delivers progressive care pathways to international patients who are searching for alternative cancer treatment abroad in a modern, supportive medical setting.\n\nPatient Travel and Support Services\nITC Immunity Therapy Center provides extensive logistical support for international visitors traveling to Tijuana, Mexico. The facility is located near San Diego International Airport (SAN), and dedicated shuttle services facilitate seamless border crossings and local transit to medical appointments and affiliated hotel accommodations.\n\nBy Plane\nSan Diego International Airport (SAN) is just 25 minutes from Tijuana. Many people from the U.S., Canada, and other countries like this option. ITC even offers free rides to and from the airport."
           }
         ],
-        "conversation_id": "78a99ca5-4911-4172-942b-eab8122a7c04",
+        "conversation_id": "358aa7f6-b239-48cf-b538-7fbcfeaea93c",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 49.67,
+      "latency_ms": 27.64,
       "passed": true,
       "failure_reason": ""
     },
@@ -710,13 +710,13 @@
             "excerpt": "Video titles\nStep-by-Step: Comprehensive Alternative Cancer Treatment at ITC Mexico\n\nVideo titles\nStage 4 Cancer to No Evidence of Disease at ITC – Martin’s Miracle Story\n\nVideo titles\nManaging Medical Records for International Healthcare and Medical Tourism in Tijuana, Mexico – Best Practices"
           }
         ],
-        "conversation_id": "993beca6-c87e-45b6-b0be-b0d750bbcb3d",
+        "conversation_id": "667d00f2-151a-49a8-84db-0cd8f5c9cc85",
         "needs_quote": false,
         "disclaimer": "This describes website content, including provider claims. It does not establish clinical effectiveness or suitability for an individual.",
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 109.01,
+      "latency_ms": 50.05,
       "passed": true,
       "failure_reason": ""
     },
@@ -733,13 +733,13 @@
         "status": "unknown",
         "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "sources": [],
-        "conversation_id": "7187bec0-4c0f-478b-820d-444256b14b8b",
+        "conversation_id": "04f72b2b-81fd-438b-a06c-aac9b207e23f",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 54.45,
+      "latency_ms": 46.61,
       "passed": true,
       "failure_reason": ""
     },
@@ -756,13 +756,13 @@
         "status": "unknown",
         "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "sources": [],
-        "conversation_id": "6b3f04f9-2317-484c-a456-64b4cb5b8cec",
+        "conversation_id": "cde7ac62-3dfb-45a9-ae66-c4c6a771f449",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 1.91,
+      "latency_ms": 1.52,
       "passed": true,
       "failure_reason": ""
     },
@@ -780,13 +780,13 @@
         "status": "out_of_scope",
         "answer": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
         "sources": [],
-        "conversation_id": "6a6de9bd-18eb-42c8-814a-805fd14a77f8",
+        "conversation_id": "dac646e9-59af-422b-8728-cfbc70f3d238",
         "needs_quote": false,
         "disclaimer": null,
         "language": "en",
         "quote_url": null
       },
-      "latency_ms": 0.37,
+      "latency_ms": 0.53,
       "passed": true,
       "failure_reason": ""
     },
@@ -818,13 +818,13 @@
             "excerpt": "Program Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000"
           }
         ],
-        "conversation_id": "f942f6f6-2ab9-4bb8-a615-1aefcd8f7344",
+        "conversation_id": "ff8390f5-5bbc-47d1-b00f-f1e6d65b6c0c",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 16.77,
+      "latency_ms": 4.35,
       "passed": true,
       "failure_reason": ""
     },
@@ -841,13 +841,13 @@
         "status": "unknown",
         "answer": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "sources": [],
-        "conversation_id": "d0e5d66d-aac7-4a41-812b-a0f16c9baa8c",
+        "conversation_id": "3c4c6b64-256d-4929-9450-3e3d99acce44",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 5.15,
+      "latency_ms": 2.39,
       "passed": true,
       "failure_reason": ""
     },
@@ -870,13 +870,13 @@
         "status": "unknown",
         "answer": "I couldn’t verify a price for that exact treatment and location in the approved pages. Please request a free quote from PlacidWay.",
         "sources": [],
-        "conversation_id": "c7a59bb5-3c37-46c1-819a-2a8dadd0064e",
+        "conversation_id": "19951199-1669-4414-8bf5-33a99cbbf6df",
         "needs_quote": true,
         "disclaimer": null,
         "language": "en",
         "quote_url": "https://www.placidway.com/request-info"
       },
-      "latency_ms": 4.75,
+      "latency_ms": 4.07,
       "passed": true,
       "failure_reason": ""
     }

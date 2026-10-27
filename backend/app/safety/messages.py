@@ -1,5 +1,6 @@
 MESSAGES = {
     "en": {
+        "greeting": "Hi! Ask me about ITC Immunity Therapy Center, its listed cancer treatment packages, or prices shown in the seven approved PlacidWay pages. For example: ‘What is the listed adenocarcinoma package price?’",
         "unknown": "I couldn’t verify that information in the seven approved PlacidWay pages. You can contact PlacidWay for a free quote or clarification.",
         "price_unknown": "I couldn’t verify a price for that exact treatment and location in the approved pages. Please request a free quote from PlacidWay.",
         "out_of_scope": "I can help with the treatments, clinic information, and prices documented in the seven approved PlacidWay pages. I can’t answer that request from those sources.",
@@ -19,6 +20,7 @@ MESSAGES = {
         "price_note": "Confirm the current price, inclusions, exclusions, and availability with the provider.",
     },
     "es": {
+        "greeting": "¡Hola! Puedo ayudarte con la información sobre ITC Immunity Therapy Center, sus paquetes de tratamiento y los precios publicados en las siete páginas aprobadas de PlacidWay. Por ejemplo: «¿Cuál es el precio publicado del paquete de adenocarcinoma?»",
         "unknown": "No pude verificar esa información en las siete páginas aprobadas de PlacidWay. Puedes contactar a PlacidWay para una cotización gratuita o una aclaración.",
         "price_unknown": "No pude verificar un precio para ese tratamiento y destino exactos. Solicita una cotización gratuita a PlacidWay.",
         "out_of_scope": "Puedo ayudar con la información de tratamientos, clínicas y precios de las siete páginas aprobadas. No puedo responder esa solicitud con esas fuentes.",
@@ -38,6 +40,7 @@ MESSAGES = {
         "price_note": "Confirma el precio actual, las inclusiones y exclusiones con el proveedor.",
     },
     "ar": {
+        "greeting": "مرحباً! يمكنني مساعدتك بمعلومات مركز ITC وباقات العلاج والأسعار المنشورة في صفحات PlacidWay السبع المعتمدة. مثال: «ما السعر المنشور لباقة علاج السرطان الغدي؟»",
         "unknown": "لم أتمكن من التحقق من هذه المعلومات في صفحات PlacidWay السبع المعتمدة. يمكنك التواصل مع PlacidWay لطلب عرض سعر مجاني أو توضيح.",
         "price_unknown": "لم أتمكن من التحقق من سعر هذا العلاج في الوجهة المطلوبة. يرجى طلب عرض سعر مجاني من PlacidWay.",
         "out_of_scope": "يمكنني المساعدة بمعلومات العلاجات والعيادات والأسعار الواردة في الصفحات السبع المعتمدة فقط.",

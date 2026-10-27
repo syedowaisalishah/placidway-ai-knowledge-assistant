@@ -104,6 +104,16 @@ async def test_no_key_is_honest(knowledge):
     assert response.status == "unavailable"
 
 
+async def test_hi_gets_welcome_without_quote_or_source_fallback(service):
+    response = await service.chat(ChatRequest(message="HI"))
+    assert response.status == "answered"
+    assert response.answer.startswith("Hi! Ask me")
+    assert "couldn’t verify" not in response.answer
+    assert response.sources == []
+    assert response.needs_quote is False
+    assert response.quote_url is None
+
+
 async def test_exact_prices_and_followup(service):
     first = await service.chat(
         ChatRequest(message="How much does adenocarcinoma treatment cost in Mexico?")

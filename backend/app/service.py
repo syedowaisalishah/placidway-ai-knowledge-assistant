@@ -122,6 +122,13 @@ class ChatService:
         status = await asyncio.to_thread(self.knowledge.status)
         if not status["ready"]:
             return fallback("knowledge_unavailable", "unavailable")
+        if query.intent == "greeting":
+            return ChatResponse(
+                status="answered",
+                answer=messages["greeting"],
+                conversation_id=session_id,
+                language=query.language,
+            )
         if query.intent in ("quote", "booking"):
             return ChatResponse(
                 status="answered" if query.intent == "quote" else "unknown",

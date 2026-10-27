@@ -100,3 +100,20 @@ def test_exclusion_question_is_not_inclusion_question():
 
 def test_available_is_not_a_lab_question():
     assert analyze("What videos are available about ITC?").aspect == ""
+
+
+@pytest.mark.parametrize(
+    "message,language",
+    [("HI", "en"), ("Hello!", "en"), ("Hola", "es"), ("مرحبا", "ar")],
+)
+def test_greeting_is_not_an_unsupported_knowledge_request(message, language):
+    query = analyze(message)
+    assert query.intent == "greeting"
+    assert query.language == language
+    assert query.block == ""
+
+
+def test_greeting_before_a_real_question_does_not_hide_the_question():
+    query = analyze("Hi, what is the adenocarcinoma package price?")
+    assert query.intent == "pricing"
+    assert query.topic == "adenocarcinoma"

@@ -36,12 +36,14 @@ def main():
             "/api/chat",
             json={"message": "What is the price for an adenocarcinoma package in Atlantis?"},
         )
+        greeting = client.post("/api/chat", json={"message": "HI"})
         admin = client.get("/api/admin/unanswered")
     health_data = health.json() if health.status_code == 200 else {}
     knowledge_data = knowledge.json() if knowledge.status_code == 200 else {}
     price_data = price.json() if price.status_code == 200 else {}
     starting_data = starting.json() if starting.status_code == 200 else {}
     unknown_data = unknown.json() if unknown.status_code == 200 else {}
+    greeting_data = greeting.json() if greeting.status_code == 200 else {}
     source_urls = [source["url"] for source in price_data.get("sources", [])]
     checks = {
         "page_served": page.status_code == 200 and b"PlacidWay" in page.content,
@@ -63,6 +65,11 @@ def main():
         and "$18,995" in starting_data.get("answer", ""),
         "unknown_destination_abstained": unknown.status_code == 200
         and unknown_data.get("status") != "answered",
+        "greeting_welcomes_without_quote": greeting.status_code == 200
+        and greeting_data.get("status") == "answered"
+        and greeting_data.get("answer", "").startswith("Hi! Ask me")
+        and not greeting_data.get("needs_quote")
+        and not greeting_data.get("quote_url"),
         "admin_protected": admin.status_code == 401,
     }
     result = {
@@ -78,6 +85,7 @@ def main():
             "price": price.status_code,
             "starting": starting.status_code,
             "unknown": unknown.status_code,
+            "greeting": greeting.status_code,
             "admin": admin.status_code,
         },
         "price_source_urls": source_urls,

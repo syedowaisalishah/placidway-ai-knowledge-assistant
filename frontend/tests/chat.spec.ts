@@ -53,6 +53,21 @@ test("source library and help dialog work", async ({ page }) => {
   await expect(page.getByRole("dialog")).toHaveCount(0);
 });
 
+test("a simple greeting gets a welcome without an irrelevant quote link", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByLabel("Your question").fill("HI");
+  await page.getByRole("button", { name: "Send message" }).click();
+  await expect(page.locator(".assistant .answer-copy").last()).toContainText(
+    "Hi! Ask me",
+  );
+  await expect(page.locator(".assistant .answer-copy").last()).not.toContainText(
+    "couldn’t verify",
+  );
+  await expect(page.locator(".assistant .quote-link")).toHaveCount(0);
+});
+
 test("mobile Arabic input and menu remain usable without horizontal overflow", async ({
   page,
 }) => {

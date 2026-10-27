@@ -267,7 +267,7 @@ def analyze(
         if re.search(r"[\u0600-\u06ff]", message)
         else "es"
         if re.search(
-            r"\b(cuanto|precio|incluye|tratamiento|puedes|recuperacion|costo|donde)\b",
+            r"\b(cuanto|precio|incluye|tratamiento|puedes|recuperacion|costo|donde|hola|buenos dias|buenas tardes|buenas noches)\b",
             text,
         )
         else "en"
@@ -288,6 +288,14 @@ def analyze(
         text,
     ):
         query.block = "out_of_scope"
+        return query
+    # Social openers are not knowledge requests. Match the whole message so
+    # "Hi, what does the package cost?" still reaches the grounded price path.
+    if re.fullmatch(
+        r"\s*(?:hi|hi there|hey|hello|hello there|good morning|good afternoon|good evening|hola|buenos dias|buenas tardes|buenas noches|مرحبا|اهلا|أهلا|السلام عليكم|صباح الخير|مساء الخير)[!?.،\s]*",
+        text,
+    ):
+        query.intent = "greeting"
         return query
     if re.search(
         r"\b(book|schedule|reserve|appointment tomorrow|reservar|cita manana)\b|احجز|حجز موعد",
