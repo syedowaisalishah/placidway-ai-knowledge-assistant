@@ -1,0 +1,62 @@
+{
+  "assessment_sha256": "a2d63b8001aa937df4061002b0e2b02cde813177bee9c93cc5a3766fe5997d13",
+  "verification": "Embedded PDF hyperlinks; not inferred from page titles",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "ITC Immunity Therapy Center – Alternative Cancer Treatment",
+      "category": "clinic_profile",
+      "url": "https://www.placidway.com/profile/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center",
+      "treatment": "",
+      "hyperlink_verified": true
+    },
+    {
+      "id": "source-2",
+      "title": "Alternative Adenocarcinoma Cancer Treatment in Tijuana",
+      "category": "treatment_package",
+      "url": "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC",
+      "treatment": "adenocarcinoma",
+      "hyperlink_verified": true
+    },
+    {
+      "id": "source-3",
+      "title": "Alternative Adrenal Cancer Treatment in Tijuana",
+      "category": "treatment_package",
+      "url": "https://www.placidway.com/package/7902/Alternative-Adrenal-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC",
+      "treatment": "adrenal cancer",
+      "hyperlink_verified": true
+    },
+    {
+      "id": "source-4",
+      "title": "Alternative Anal Cancer Treatment in Tijuana",
+      "category": "treatment_package",
+      "url": "https://www.placidway.com/package/7901/Alternative-Anal-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC",
+      "treatment": "anal cancer",
+      "hyperlink_verified": true
+    },
+    {
+      "id": "source-5",
+      "title": "ITC Tijuana Videos – Alternative Cancer Treatment",
+      "category": "clinic_videos",
+      "url": "https://www.placidway.com/profile-videos/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center",
+      "treatment": "",
+      "hyperlink_verified": true
+    },
+    {
+      "id": "source-6",
+      "title": "ITC Immunity Therapy Center – Price List",
+      "category": "price_list",
+      "url": "https://www.placidway.com/price-list/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center",
+      "treatment": "",
+      "hyperlink_verified": true
+    },
+    {
+      "id": "source-7",
+      "title": "Alternative Medicine Cost Abroad – Compare Prices 2026",
+      "category": "price_comparison",
+      "url": "https://www.placidway.com/search-medical-pricings/Alternative-Medicine/All/1",
+      "treatment": "",
+      "hyperlink_verified": true
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+-r requirements-runtime.txt
+sentence-transformers==6.2.0
+torch==2.14.1
+pytest==9.1.1
+pytest-asyncio==1.4.1

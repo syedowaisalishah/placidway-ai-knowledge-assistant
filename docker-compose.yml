@@ -1,0 +1,18 @@
+services:
+  assistant:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      ANSWER_MODE: ${ANSWER_MODE:-extractive}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.1-flash-lite}
+      GEMINI_FREE_TIER_CONFIRMED: ${GEMINI_FREE_TIER_CONFIRMED:-false}
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s

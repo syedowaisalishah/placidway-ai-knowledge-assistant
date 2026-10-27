@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-10-27T14:13:29.705230+00:00",
+  "base_url": "https://position-comparable-result-footage.trycloudflare.com",
+  "mode": "extractive",
+  "gemini_configured": false,
+  "checks": {
+    "page_served": true,
+    "health_ready": true,
+    "seven_sources_indexed": true,
+    "price_grounded": true,
+    "starting_qualifier_preserved": true,
+    "unknown_destination_abstained": true,
+    "admin_protected": true
+  },
+  "http_statuses": {
+    "page": 200,
+    "health": 200,
+    "knowledge": 200,
+    "price": 200,
+    "starting": 200,
+    "unknown": 200,
+    "admin": 401
+  },
+  "price_source_urls": [
+    "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+  ],
+  "unknown_status": "unknown",
+  "temporary_tunnel": true,
+  "seven_day_uptime_verified": false
+}
