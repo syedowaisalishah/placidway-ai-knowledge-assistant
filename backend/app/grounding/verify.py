@@ -100,12 +100,25 @@ def validate_answer(
             raise ValueError("Answer contains unsupported or rewritten evidence")
         start = chunk.text.index(quote)
         end = start + len(quote)
-        if (start and chunk.text[start - 1] != "\n") or (
-            end < len(chunk.text) and chunk.text[end] != "\n"
-        ):
-            raise ValueError(
-                "Evidence must preserve complete source lines and qualifications"
+        line_start = chunk.text.rfind("\n", 0, start) + 1
+        next_newline = chunk.text.find("\n", end)
+        line_end = len(chunk.text) if next_newline == -1 else next_newline
+        if start != line_start or end != line_end:
+            # Gemini can copy a complete sentence from inside a source line.
+            # Expand it to that exact line so surrounding claims and qualifiers
+            # are shown. A fragment from the middle of a sentence, such as a
+            # price without "starting from", must still fail closed.
+            prefix = chunk.text[line_start:start]
+            suffix = chunk.text[end:line_end]
+            sentence_start = not prefix or prefix.endswith((". ", "! ", "? ", ": "))
+            sentence_end = not suffix or (
+                quote.endswith((".", "!", "?")) and suffix.startswith(" ")
             )
+            if not sentence_start or not sentence_end:
+                raise ValueError(
+                    "Evidence must preserve complete source lines and qualifications"
+                )
+            quote = chunk.text[line_start:line_end]
         if re.search(
             r"https?://|<script|ignore.{0,30}instructions|system prompt|api.key",
             quote,

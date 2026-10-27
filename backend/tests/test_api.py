@@ -1,9 +1,11 @@
 import pytest
 from app.config import Settings
 from app.generation.gemini import GenerationUnavailable
+from app.grounding.verify import eligible_hits
 from app.main import create_app
 from app.safety.messages import PACKAGE_SUGGESTIONS, SUGGESTIONS
-from app.schemas import ChatRequest
+from app.safety.query import analyze
+from app.schemas import ChatRequest, GeneratedAnswer
 from app.service import ChatService
 from fastapi.testclient import TestClient
 
@@ -136,6 +138,29 @@ async def test_suggested_questions_have_source_supported_answers(service):
                 )
                 assert response.status == "answered", (language, question)
                 assert response.sources, (language, question)
+
+
+async def test_gemini_sentence_selection_answers_suggested_treatments(knowledge):
+    query = analyze("What treatments does ITC offer?")
+    chunk = eligible_hits(query, knowledge.retrieve(query))[0].chunk
+    sentence = chunk.text.splitlines()[1].split(". ", 1)[1]
+
+    class SentenceGenerator:
+        async def generate(self, query, hits):
+            return GeneratedAnswer(
+                status="answered",
+                selections=[{"chunk_id": chunk.id, "quote": sentence}],
+            )
+
+    service = ChatService(
+        Settings(answer_mode="gemini", log_unanswered=False),
+        knowledge,
+        SentenceGenerator(),
+    )
+    response = await service.chat(ChatRequest(message="What treatments does ITC offer?"))
+    assert response.status == "answered"
+    assert len(response.sources) == 1
+    assert chunk.text.splitlines()[1] in response.answer
 
 
 async def test_ambiguous_package_question_offers_three_matching_packages(service):

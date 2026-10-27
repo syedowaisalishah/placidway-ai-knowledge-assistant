@@ -2,11 +2,13 @@
 
 Repository: [github.com/syedowaisalishah/placidway-ai-knowledge-assistant](https://github.com/syedowaisalishah/placidway-ai-knowledge-assistant).
 
-A working, source-cited assessment chatbot built from the seven PlacidWay pages linked in the supplied PDF. It has a Next.js chat interface and a FastAPI API. Local MiniLM embeddings and ChromaDB retrieve passages; exact price rows are stored separately. An optional Gemini stage selects source passages through the official SDK. The currently running demo uses **source-reading mode**, because no Gemini API key was provided. It never presents local output as Gemini output.
+A working, source-cited assessment chatbot built from the seven PlacidWay pages linked in the supplied PDF. It has a Next.js chat interface and a FastAPI API. Local MiniLM embeddings and ChromaDB retrieve passages; exact price rows are stored separately. An optional Gemini stage selects source passages through the official SDK. A checkout without a confirmed free-tier Gemini key runs in **source-reading mode**. It never presents local output as Gemini output.
 
 The app answers only from the approved pages. It links each factual answer to its source, preserves displayed price qualifiers, and abstains when the exact treatment, destination, clinic, program, or evidence is absent. It does not give personal medical advice or treat the website's promotional claims as independently verified facts.
 
 Visitors can greet the assistant, ask what it can do, or use clickable follow-up questions. A vague package question prompts for the treatment; an unrelated request gets a clear description of the seven-page scope. The suggested questions were checked against the approved index. The assistant still declines to invent facts beyond those pages.
+
+See [chatbot limitations](docs/chatbot-limitations.md) for why some questions receive an unknown response and what expanding coverage would require. In particular, the assessment explicitly limits factual answers to the seven linked pages; the broader research note is not part of the chatbot index.
 
 ## Run locally
 
@@ -24,7 +26,7 @@ PORT=8765 bash scripts/start_local.sh
 
 Open `http://127.0.0.1:8765`. The committed portable snapshot restores Chroma automatically on first launch. `GET /api/health` and `GET /api/knowledge/status` show the active mode and index status. The source-reading path needs no paid service or API key. The app defaults to Gemini mode in a new `.env`, so setting extractive mode is necessary for the keyless demo.
 
-For Gemini mode, set `ANSWER_MODE=gemini`, `GEMINI_API_KEY`, `GEMINI_MODEL=gemini-3.1-flash-lite`, and `GEMINI_FREE_TIER_CONFIRMED=true` only after checking that the specific project and region qualify for free usage and paid billing is disabled. Then run `.venv/bin/python scripts/verify_gemini.py` and `.venv/bin/python scripts/evaluate.py --mode gemini`. This repository has **not** passed those live checks because the key is absent. The app never silently falls back from a Gemini failure to local mode.
+For Gemini mode, set `ANSWER_MODE=gemini`, `GEMINI_API_KEY`, `GEMINI_MODEL=gemini-3.1-flash-lite`, and `GEMINI_FREE_TIER_CONFIRMED=true` only after checking that the specific project and region qualify for free usage and paid billing is disabled. Then run `.venv/bin/python scripts/verify_gemini.py` and `.venv/bin/python scripts/evaluate.py --mode gemini`. A local, untracked key passed the generation check and 30/30 live evaluation cases on October 28. The app never silently falls back from a Gemini failure to local mode.
 
 ## Source and index operations
 

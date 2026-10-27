@@ -53,6 +53,34 @@ def test_valid_complete_passage_is_accepted():
     )
 
 
+def test_complete_sentence_inside_line_expands_to_full_source_line():
+    hits, approved = sample()
+    line = (
+        "The clinic describes a tailored treatment approach. "
+        "Its page lists laser therapy, hyperthermia, and biomagnetic therapy as examples."
+    )
+    hits[0].chunk.text = line
+    quote = "Its page lists laser therapy, hyperthermia, and biomagnetic therapy as examples."
+    answer = GeneratedAnswer(
+        status="answered", selections=[{"chunk_id": "c1", "quote": quote}]
+    )
+    assert validate_answer(answer, hits, approved) == [(hits[0].chunk, line)]
+
+
+def test_list_item_body_expands_to_its_full_source_line():
+    hits, approved = sample()
+    line = (
+        "Treatment Explanation: Physicians explain therapies such as laser therapy, "
+        "hyperthermia, and biomagnetic therapy to patients."
+    )
+    hits[0].chunk.text = line
+    quote = "Physicians explain therapies such as laser therapy, hyperthermia, and biomagnetic therapy to patients."
+    answer = GeneratedAnswer(
+        status="answered", selections=[{"chunk_id": "c1", "quote": quote}]
+    )
+    assert validate_answer(answer, hits, approved) == [(hits[0].chunk, line)]
+
+
 def test_valid_quote_with_unapproved_url_rejected():
     hits, approved = sample()
     with pytest.raises(ValueError):
