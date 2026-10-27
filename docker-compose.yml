@@ -2,7 +2,7 @@ services:
   assistant:
     build: .
     ports:
-      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:${HOST_PORT:-8765}:8000"
     environment:
       ANSWER_MODE: ${ANSWER_MODE:-extractive}
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}

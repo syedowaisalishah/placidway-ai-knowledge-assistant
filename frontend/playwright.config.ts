@@ -9,7 +9,7 @@ export default defineConfig({
     ["json", { outputFile: "../evaluation/browser-results.json" }],
   ],
   use: {
-    baseURL: process.env.TEST_BASE_URL || "http://127.0.0.1:8000",
+    baseURL: process.env.TEST_BASE_URL || "http://127.0.0.1:8765",
     launchOptions: {
       executablePath: process.env.CHROME_PATH || "/usr/bin/google-chrome",
       args: ["--no-sandbox", "--disable-dev-shm-usage"],

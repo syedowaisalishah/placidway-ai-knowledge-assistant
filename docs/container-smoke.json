@@ -1,0 +1,40 @@
+{
+  "checked_at_utc": "2026-10-27T14:30:04.005771+00:00",
+  "base_url": "http://127.0.0.1:8766",
+  "mode": "extractive",
+  "gemini_configured": false,
+  "checks": {
+    "page_served": true,
+    "health_ready": true,
+    "seven_sources_indexed": true,
+    "price_grounded": true,
+    "starting_qualifier_preserved": true,
+    "unknown_destination_abstained": true,
+    "admin_protected": true
+  },
+  "http_statuses": {
+    "page": 200,
+    "health": 200,
+    "knowledge": 200,
+    "price": 200,
+    "starting": 200,
+    "unknown": 200,
+    "admin": 401
+  },
+  "price_source_urls": [
+    "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+  ],
+  "unknown_status": "unknown",
+  "temporary_tunnel": false,
+  "seven_day_uptime_verified": false,
+  "cold_start_from_portable_snapshot": true,
+  "semantic_retrieval": {
+    "status": "answered",
+    "source_id": "source-1",
+    "source_url": "https://www.placidway.com/profile/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center",
+    "question": "What treatments does ITC offer?"
+  },
+  "memory_limit_mib": 512,
+  "observed_memory_after_retrieval_mib": 211,
+  "oom_killed": false
+}

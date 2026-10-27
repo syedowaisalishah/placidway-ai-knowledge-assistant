@@ -1,3 +1,5 @@
+FROM ghcr.io/astral-sh/uv:0.13.6 AS uv
+
 FROM node:22-bookworm-slim AS frontend
 WORKDIR /build/frontend
 COPY frontend/package*.json ./
@@ -8,10 +10,11 @@ RUN npm run build
 
 FROM python:3.12-slim
 WORKDIR /app
+COPY --from=uv /uv /usr/local/bin/uv
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 TOKENIZERS_PARALLELISM=false \
     OMP_NUM_THREADS=2 ANONYMIZED_TELEMETRY=False HF_HUB_DISABLE_TELEMETRY=1
 COPY backend/requirements-runtime.txt ./backend/requirements-runtime.txt
-RUN pip install --no-cache-dir -r backend/requirements-runtime.txt
+RUN uv pip install --system --no-cache -r backend/requirements-runtime.txt
 COPY backend/app ./backend/app
 COPY config ./config
 COPY scripts ./scripts
