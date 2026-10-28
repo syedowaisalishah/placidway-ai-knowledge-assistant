@@ -217,3 +217,37 @@ class KnowledgeStore:
                 return []
             identities[identity] = amount
         return matched[:8]
+
+    def comparison_prices(self, query: Query) -> list[PriceRecord]:
+        """Return one exact listing per requested country or no comparison.
+
+        The comparison page includes broad package ranges and clinic-specific
+        listings. Only the latter can be paired by exact procedure name; even
+        then the answer must not imply equal sessions or inclusions.
+        """
+        self.load()
+        countries = set(query.countries)
+        if (
+            len(countries) != 2
+            or not query.topic
+            or query.clinic
+            or query.program
+            or query.aspect
+        ):
+            return []
+        matched = [
+            price
+            for price in self.prices
+            if price.source_id == "source-7"
+            and price.scope == "listed_price"
+            and price.country in countries
+            and normalize(price.treatment).split(",", 1)[0].strip()
+            == normalize(query.topic)
+            and price.price
+            and re.fullmatch(r"\$\d[\d,]*(?:\.\d{2})?", price.price)
+        ]
+        if len(matched) != 2 or {p.country for p in matched} != countries:
+            return []
+        if len({p.currency for p in matched}) != 1:
+            return []
+        return sorted(matched, key=lambda p: p.country or "")

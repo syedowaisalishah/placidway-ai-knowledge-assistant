@@ -215,6 +215,38 @@ async def test_unknown_country_does_not_receive_price(service):
     assert response.status == "unknown" and "$" not in response.answer
 
 
+async def test_comparison_uses_two_exact_listings_with_caveat(service):
+    response = await service.chat(
+        ChatRequest(message="Is ozone therapy cheaper in Turkey or Mexico?")
+    )
+    assert response.status == "answered"
+    assert "$110" in response.answer and "$1000" in response.answer
+    assert "numerically lower" in response.answer
+    assert "different clinics" in response.answer
+    assert {source.id for source in response.sources} == {"source-7"}
+
+
+async def test_comparison_requires_one_listing_per_country(service, knowledge, monkeypatch):
+    missing = await service.chat(
+        ChatRequest(message="Is ozone therapy cheaper in Germany or Mexico?")
+    )
+    assert missing.status == "unknown"
+    assert missing.sources == []
+    duplicate = next(
+        price
+        for price in knowledge.prices
+        if price.source_id == "source-7"
+        and price.country == "Turkey"
+        and price.treatment == "Ozone Therapy, Alternative Medicine"
+    )
+    monkeypatch.setattr(knowledge, "prices", knowledge.prices + [duplicate])
+    ambiguous = await service.chat(
+        ChatRequest(message="Is ozone therapy cheaper in Turkey or Mexico?")
+    )
+    assert ambiguous.status == "unknown"
+    assert ambiguous.sources == []
+
+
 async def test_pii_never_calls_generator(knowledge):
     class NoGenerator:
         async def generate(self, *args):

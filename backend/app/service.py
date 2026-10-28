@@ -7,6 +7,7 @@ import re
 import time
 from collections import deque
 from datetime import UTC, datetime
+from decimal import Decimal
 from threading import Lock
 
 from app.config import Settings
@@ -170,9 +171,44 @@ class ChatService:
             )
         self.sessions.update(session_id, query)
         if query.intent == "comparison":
-            # The current approved rows do not establish equal program scope. Listing
-            # two figures as a fair comparison would imply unsupported equivalence.
-            return fallback("comparison", quote=True)
+            prices = await asyncio.to_thread(self.knowledge.comparison_prices, query)
+            if not prices:
+                return fallback("comparison", quote=True)
+            amounts = [Decimal(p.price.replace("$", "").replace(",", "")) for p in prices]
+            comparison = (
+                messages["comparison_equal"]
+                if amounts[0] == amounts[1]
+                else messages["comparison_lower"].format(
+                    country=prices[0].country
+                    if amounts[0] < amounts[1]
+                    else prices[1].country
+                )
+            )
+            source = next(s for s in self.knowledge.sources if s.id == "source-7")
+            evidence = "\n".join(p.raw_evidence for p in prices)
+            return ChatResponse(
+                status="answered",
+                answer=(
+                    messages["comparison_intro"].format(treatment=query.topic)
+                    + "\n\n"
+                    + "\n\n".join(markdown_quote(p.raw_evidence) for p in prices)
+                    + "\n\n"
+                    + comparison
+                ),
+                sources=[
+                    Citation(
+                        id=source.id,
+                        title=source.title,
+                        url=source.url,
+                        excerpt=evidence,
+                    )
+                ],
+                conversation_id=session_id,
+                language=query.language,
+                needs_quote=True,
+                quote_url=self.knowledge.quote_url(),
+                suggested_questions=suggested_questions,
+            )
         if query.intent == "pricing":
             prices = await asyncio.to_thread(self.knowledge.matching_prices, query)
             if not prices:

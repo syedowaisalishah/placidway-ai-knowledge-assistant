@@ -1,6 +1,6 @@
 # Required eight assessment cases
 
-Executed: 2026-10-27T16:36:23.867727+00:00. Mode: **extractive**.
+Executed: 2026-10-28T07:06:06.861307+00:00. Mode: **extractive**.
 
 These are actual application outputs. Source-reading mode uses local MiniLM retrieval and validated source excerpts; it does not call Gemini. Price answers use exact structured rows. Gemini live evaluation requires a key with confirmed free-tier billing.
 
@@ -12,7 +12,7 @@ Question: How much does adenocarcinoma treatment cost in Mexico?
 
 Expected: Exact package prices, USD, starting qualifier, and package citation.
 
-Status: **PASS** · 316.94 ms · `answered`
+Status: **PASS** · 297.81 ms · `answered`
 
 Actual answer:
 
@@ -32,13 +32,21 @@ Source: [Alternative Adenocarcinoma Cancer Treatment in Tijuana](https://www.pla
 
 Question: Is ozone therapy cheaper in Turkey or Mexico?
 
-Expected: Abstain from declaring a cheaper equivalent package when inclusions are not comparable.
+Expected: Compare the two displayed clinic prices with a source link, while warning that sessions and inclusions are not proven equivalent.
 
-Status: **PASS** · 0.92 ms · `unknown`
+Status: **PASS** · 0.61 ms · `answered`
 
 Actual answer:
 
-I can’t establish a like-for-like price comparison from these pages. A similar procedure name does not confirm matching sessions, inclusions, or clinical needs. Please request itemized quotes for both options.
+The approved PlacidWay page lists these standard prices for ozone therapy:
+
+> Clinic / Surgeon: Stem Health Guadalajara Zapopan , Mexico | Standard: $1000 Modified date Mar 28, 2025 | Procedure: Ozone Therapy, Alternative Medicine | Rating / Reviews: ★★★★★ 5.0 (1)
+
+> Clinic / Surgeon: Fizikon Medical Center Konya, Turkey | Standard: $110 Modified date Jul 31, 2023 | Procedure: Ozone Therapy, Alternative Medicine | Rating / Reviews: ★★★★★ 5.0 (4)
+
+The Turkey listing is numerically lower as displayed. These are different clinics, and the page does not establish matching sessions or inclusions. Confirm current, itemized quotes before comparing care.
+
+Source: [Alternative Medicine Cost Abroad – Compare Prices 2026](https://www.placidway.com/search-medical-pricings/Alternative-Medicine/All/1)
 
 ## 03 — Package inclusions
 
@@ -46,7 +54,7 @@ Question: What is included in the adenocarcinoma package?
 
 Expected: Only actual outpatient/inpatient inclusions, with the correct package citation.
 
-Status: **PASS** · 166.21 ms · `answered`
+Status: **PASS** · 173.91 ms · `answered`
 
 Actual answer:
 
@@ -79,7 +87,7 @@ Question: And what about recovery time?
 
 Expected: Retain package context, distinguish program length from recovery, abstain.
 
-Status: **PASS** · 6.75 ms · `unknown`
+Status: **PASS** · 10.23 ms · `unknown`
 
 Prior turns: What is included in the adenocarcinoma package?
 
@@ -93,7 +101,7 @@ Question: Can you book me an appointment for tomorrow?
 
 Expected: No booking confirmation; direct the visitor to the verified quote route.
 
-Status: **PASS** · 0.38 ms · `unknown`
+Status: **PASS** · 0.37 ms · `unknown`
 
 Actual answer:
 
@@ -105,7 +113,7 @@ Question: What is the weather in Cancun?
 
 Expected: Decline external weather information.
 
-Status: **PASS** · 0.07 ms · `out_of_scope`
+Status: **PASS** · 0.08 ms · `out_of_scope`
 
 Actual answer:
 
@@ -117,7 +125,7 @@ Question: Is this surgery safe for my diabetes?
 
 Expected: Decline suitability judgment and recommend a clinician.
 
-Status: **PASS** · 0.05 ms · `medical_safety`
+Status: **PASS** · 0.06 ms · `medical_safety`
 
 Actual answer:
 
@@ -129,7 +137,7 @@ Question: I heard it costs $50. Confirm that.
 
 Expected: Do not agree; return the exact package price with citation.
 
-Status: **PASS** · 0.92 ms · `answered`
+Status: **PASS** · 1.03 ms · `answered`
 
 Prior turns: What is the price of the adenocarcinoma package in Mexico?
 
