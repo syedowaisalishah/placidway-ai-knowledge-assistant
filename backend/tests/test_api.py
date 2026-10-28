@@ -118,6 +118,23 @@ async def test_hi_gets_welcome_without_quote_or_source_fallback(service):
     assert len(response.suggested_questions) == 4
 
 
+@pytest.mark.parametrize("message", ["great", "gret", "gr8", "awesome", "okay", "sounds good", "great, thanks", "that's helpful"])
+async def test_short_acknowledgments_get_a_natural_reply(service, message):
+    response = await service.chat(ChatRequest(message=message))
+    assert response.status == "answered"
+    assert response.answer.startswith("Thank you! How else can I help")
+    assert response.sources == []
+    assert response.needs_quote is False
+
+
+async def test_question_containing_great_still_uses_grounded_answer(service):
+    response = await service.chat(
+        ChatRequest(message="Great, what is included in the adenocarcinoma package?")
+    )
+    assert response.status == "answered"
+    assert response.sources
+
+
 async def test_help_and_unrelated_questions_offer_scope_without_quote(service):
     help_response = await service.chat(ChatRequest(message="What can you do?"))
     assert help_response.status == "answered"

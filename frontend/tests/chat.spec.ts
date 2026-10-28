@@ -107,6 +107,31 @@ test("a simple greeting gets a welcome without an irrelevant quote link", async 
   ).toHaveCount(3);
 });
 
+test("acknowledgments and saved chats can be reopened and deleted", async ({ page }) => {
+  await page.goto("/");
+  await page.getByLabel("Your question").fill("Hi");
+  await page.getByRole("button", { name: "Send message" }).click();
+  await expect(page.locator(".assistant .answer-copy").last()).toContainText("How can I help you today?");
+  await expect(page.getByRole("button", { name: "Delete conversation: Hi" })).toBeVisible();
+
+  await page.getByRole("button", { name: /New conversation/ }).click();
+  await page.getByLabel("Your question").fill("gret");
+  await page.getByRole("button", { name: "Send message" }).click();
+  await expect(page.locator(".assistant .answer-copy").last()).toContainText("Thank you! How else can I help");
+  await expect(page.locator(".history-item")).toHaveCount(2);
+
+  await page.reload();
+  await expect(page.locator(".assistant .answer-copy").last()).toContainText("Thank you! How else can I help");
+  await page.getByRole("button", { name: "Hi", exact: true }).click();
+  await expect(page.locator(".assistant .answer-copy").last()).toContainText("How can I help you today?");
+  await page.getByRole("button", { name: "Delete conversation: gret" }).click();
+  await expect(page.locator(".history-item")).toHaveCount(1);
+  await page.getByRole("button", { name: "Delete conversation: Hi" }).click();
+  await expect(page.locator(".history-item")).toHaveCount(0);
+  await page.reload();
+  await expect(page.locator(".message")).toHaveCount(0);
+});
+
 test("mobile Arabic input and menu remain usable without horizontal overflow", async ({
   page,
 }) => {

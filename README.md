@@ -14,6 +14,8 @@ The interface uses the [official PlacidWay logo](https://www.placidway.com/front
 
 The chat uses larger default reading text, clearer source labels and controls, and a wider answer column. The **Text size** button switches to an even larger view and saves the preference in the browser. On narrow screens, topic cards stack vertically and the composer remains usable without horizontal scrolling.
 
+Recent chats are saved only in the current browser (up to 20 conversations and 60 messages per conversation). You can reopen or delete individual chats from the sidebar. Short replies such as “great,” “gret,” and “thanks” receive conversational responses. This does not expand the seven approved pages used for factual answers. Avoid entering personal health details because chat history is stored on this device.
+
 See [chatbot limitations](docs/chatbot-limitations.md) for why some questions receive an unknown response and what expanding coverage would require. In particular, the assessment explicitly limits factual answers to the seven linked pages; the broader research note is not part of the chatbot index.
 
 ## Run locally

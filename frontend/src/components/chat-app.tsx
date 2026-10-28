@@ -22,6 +22,7 @@ import {
   ShieldCheck,
   Sparkles,
   Stethoscope,
+  Trash2,
   Wallet,
   X,
   AlertCircle,
@@ -81,6 +82,38 @@ const labels = {
     suggestions: "يمكنك أن تسأل",
   },
 };
+
+type SavedChat = {
+  id: string;
+  title: string;
+  messages: Message[];
+  conversationId: string | null;
+  updatedAt: number;
+};
+const CHAT_STORAGE_KEY = "placidway-chat-history-v1";
+const MAX_SAVED_CHATS = 20;
+const MAX_MESSAGES_PER_CHAT = 60;
+
+function readSavedChats(): SavedChat[] {
+  try {
+    const parsed: unknown = JSON.parse(localStorage.getItem(CHAT_STORAGE_KEY) || "[]");
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((chat): chat is SavedChat =>
+      typeof chat?.id === "string" &&
+      typeof chat?.title === "string" &&
+      Array.isArray(chat?.messages) &&
+      chat.messages.every((message: Message) =>
+        typeof message?.id === "string" &&
+        (message?.role === "user" || message?.role === "assistant") &&
+        typeof message?.text === "string",
+      ) &&
+      (chat?.conversationId === null || typeof chat?.conversationId === "string") &&
+      typeof chat?.updatedAt === "number",
+    ).slice(0, MAX_SAVED_CHATS);
+  } catch {
+    return [];
+  }
+}
 
 function Mark({ small = false }: { small?: boolean }) {
   return (
@@ -221,6 +254,9 @@ export function ChatApp() {
   const [busy, setBusy] = useState(false);
   const [language, setLanguage] = useState<Language>("en");
   const [conversationId, setConversationId] = useState<string | null>(null);
+  const [savedChats, setSavedChats] = useState<SavedChat[]>([]);
+  const [activeChatId, setActiveChatId] = useState("");
+  const [historyLoaded, setHistoryLoaded] = useState(false);
   const [health, setHealth] = useState<Health | null>(null);
   const [knowledge, setKnowledge] = useState<KnowledgeStatus | null>(null);
   const [connection, setConnection] = useState<
@@ -257,6 +293,41 @@ export function ChatApp() {
       // The default reading size still works when browser storage is unavailable.
     }
   }, []);
+  useEffect(() => {
+    const chats = readSavedChats();
+    setSavedChats(chats);
+    setActiveChatId(chats[0]?.id ?? crypto.randomUUID());
+    setMessages(chats[0]?.messages ?? []);
+    setConversationId(chats[0]?.conversationId ?? null);
+    setHistoryLoaded(true);
+  }, []);
+  useEffect(() => {
+    if (!historyLoaded || !activeChatId || !messages.length) return;
+    const firstQuestion = messages.find((message) => message.role === "user")?.text;
+    if (!firstQuestion) return;
+    const title = firstQuestion.length > 44
+      ? `${firstQuestion.slice(0, 44).trimEnd()}…`
+      : firstQuestion;
+    setSavedChats((previous) => {
+      const current = previous.find((chat) => chat.id === activeChatId);
+      const updated: SavedChat = {
+        id: activeChatId,
+        title,
+        messages: messages.slice(-MAX_MESSAGES_PER_CHAT),
+        conversationId,
+        updatedAt: current?.updatedAt ?? Date.now(),
+      };
+      return [updated, ...previous.filter((chat) => chat.id !== activeChatId)].slice(0, MAX_SAVED_CHATS);
+    });
+  }, [messages, conversationId, activeChatId, historyLoaded]);
+  useEffect(() => {
+    if (!historyLoaded) return;
+    try {
+      localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(savedChats));
+    } catch {
+      // Conversation remains usable when storage is disabled or full.
+    }
+  }, [savedChats, historyLoaded]);
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [messages, busy]);
@@ -309,9 +380,36 @@ export function ChatApp() {
     setMessages([]);
     setInput("");
     setConversationId(null);
+    setActiveChatId(crypto.randomUUID());
     setView("chat");
     setMenuOpen(false);
     inputRef.current?.focus();
+  }
+  function openChat(chat: SavedChat) {
+    abortRef.current?.abort();
+    abortRef.current = null;
+    setBusy(false);
+    setActiveChatId(chat.id);
+    setMessages(chat.messages);
+    setConversationId(chat.conversationId);
+    setInput("");
+    setView("chat");
+    setMenuOpen(false);
+  }
+  function deleteChat(chatId: string) {
+    const remaining = savedChats.filter((chat) => chat.id !== chatId);
+    setSavedChats(remaining);
+    if (activeChatId === chatId) {
+      abortRef.current?.abort();
+      abortRef.current = null;
+      setBusy(false);
+      const next = remaining[0];
+      setActiveChatId(next?.id ?? crypto.randomUUID());
+      setMessages(next?.messages ?? []);
+      setConversationId(next?.conversationId ?? null);
+      setInput("");
+      setView("chat");
+    }
   }
   async function submit(text = input) {
     const message = text.trim();
@@ -455,6 +553,35 @@ export function ChatApp() {
               {topic}
             </button>
           ))}
+        </div>
+        <div className="sidebar-history" aria-label="Chat history">
+          <div className="workspace-label">RECENT CHATS</div>
+          {savedChats.length ? (
+            <div className="history-list">
+              {savedChats.map((chat) => (
+                <div className={`history-item ${activeChatId === chat.id ? "active" : ""}`} key={chat.id}>
+                  <button
+                    className="history-select"
+                    onClick={() => openChat(chat)}
+                    aria-current={activeChatId === chat.id ? "page" : undefined}
+                    title={chat.title}
+                  >
+                    <MessageSquare size={16} aria-hidden="true" />
+                    <span>{chat.title}</span>
+                  </button>
+                  <button
+                    className="history-delete"
+                    onClick={() => deleteChat(chat.id)}
+                    aria-label={`Delete conversation: ${chat.title}`}
+                    title="Delete conversation"
+                  >
+                    <Trash2 size={16} aria-hidden="true" />
+                  </button>
+                </div>
+              ))}
+            </div>
+          ) : <p className="history-empty">Your chats will appear here.</p>}
+          <p className="history-privacy">Saved only in this browser.</p>
         </div>
         <div className="sidebar-bottom">
           <div className="trust-card">
@@ -859,10 +986,11 @@ export function ChatApp() {
             <div className="about-privacy">
               <ShieldCheck size={18} />
               <p>
-                Please don’t enter your name, email, or medical history. Chats
-                stay in this tab; only limited topic context is retained
-                temporarily on the server. AI requests contain public excerpts
-                and a constrained topic description.
+                Please don’t enter your name, email, or medical history. Chat
+                history is saved in this browser and can be deleted one chat at
+                a time. Limited topic context is retained temporarily on the
+                server. AI requests contain public excerpts and a constrained
+                topic description.
               </p>
             </div>
             <button

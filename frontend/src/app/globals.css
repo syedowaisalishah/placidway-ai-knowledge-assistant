@@ -2018,8 +2018,84 @@ summary:focus-visible {
 .large-text .sidebar-topics button,
 .large-text .nav-items button,
 .large-text .new-chat,
+.large-text .history-select,
 .large-text .quote-link {
   font-size: 16px;
+}
+
+.sidebar-history {
+  margin-top: 25px;
+  flex-shrink: 0;
+}
+.sidebar-bottom {
+  flex-shrink: 0;
+}
+.sidebar-history .workspace-label {
+  margin-bottom: 9px;
+}
+.history-list {
+  max-height: 29vh;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+.history-item {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  min-height: 44px;
+}
+.history-item:hover,
+.history-item.active {
+  background: #fff0ef;
+}
+.history-select {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 9px 5px 9px 10px;
+  background: transparent;
+  color: #414141;
+  font-size: 14px;
+  text-align: left;
+}
+.history-select svg {
+  flex: none;
+}
+.history-select span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.history-item.active .history-select {
+  color: #a8332d;
+  font-weight: 600;
+}
+.history-delete {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 44px;
+  background: transparent;
+  color: #666;
+  border-radius: 8px;
+}
+.history-delete:hover {
+  background: #ffe1de;
+  color: #a8332d;
+}
+.history-empty,
+.history-privacy {
+  margin: 4px 10px;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.history-privacy {
+  margin-top: 9px;
 }
 
 @media (max-width: 800px) {

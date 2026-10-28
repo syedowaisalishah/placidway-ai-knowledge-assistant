@@ -304,10 +304,18 @@ def analyze(
         query.intent = "help"
         return query
     if re.fullmatch(
-        r"\s*(?:thanks|thank you|thank you very much|gracias|muchas gracias|شكرا|شكرا لك)[!?.؟،\s]*",
+        r"\s*(?:thanks(?: a lot)?|thank you(?: very much)?|thankyou|thank u|thx|thnx|thanx|ty|ok(?:ay)?[, ]+thanks|gracias|muchas gracias|شكرا|شكرا لك)[!?.؟،\s]*",
         text,
     ):
         query.intent = "thanks"
+        return query
+    # Short acknowledgments (including common typing errors) are conversational,
+    # but a real question containing one of these words must continue to retrieval.
+    if re.fullmatch(
+        r"\s*(?:great|gret|grat|gr8|good|good job|well done|nice(?: one)?|awesome|perfect|cool|ok|okay|alright|all right|sounds good|got it|good to know|that(?: is|'s| was) helpful|that helps|fine|excellent|brilliant|super|genial|perfecto|bien|excelente|ممتاز|رائع|تمام|جيد)(?:[, ]+thanks)?[!?.؟،\s]*",
+        text,
+    ):
+        query.intent = "acknowledgment"
         return query
     if re.search(
         r"\b(book|schedule|reserve|appointment tomorrow|reservar|cita manana)\b|احجز|حجز موعد",

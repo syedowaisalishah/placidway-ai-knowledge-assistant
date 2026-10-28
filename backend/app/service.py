@@ -144,7 +144,7 @@ class ChatService:
         status = await asyncio.to_thread(self.knowledge.status)
         if not status["ready"]:
             return fallback("knowledge_unavailable", "unavailable")
-        if query.intent in ("greeting", "help", "thanks", "clarify_topic"):
+        if query.intent in ("greeting", "help", "thanks", "acknowledgment", "clarify_topic"):
             return ChatResponse(
                 status="answered",
                 answer=messages[query.intent],
@@ -154,7 +154,7 @@ class ChatService:
                     PACKAGE_SUGGESTIONS[query.language]
                     if query.intent == "clarify_topic"
                     else suggested_questions
-                    if query.intent != "thanks"
+                    if query.intent not in ("thanks", "acknowledgment")
                     else []
                 ),
             )
