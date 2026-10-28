@@ -1,5 +1,5 @@
-# Exact hyperlinks extracted from page 1 of the supplied assessment PDF.
-# General research in docs/placidway-data.md is NOT chatbot knowledge.
+# Exact PlacidWay pages used as the chatbot knowledge base.
+# Broader research in docs/placidway-data.md is not indexed.
 sources:
   - id: source-1
     title: ITC Immunity Therapy Center – Alternative Cancer Treatment

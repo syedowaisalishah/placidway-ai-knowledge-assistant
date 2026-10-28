@@ -16,7 +16,7 @@ from app.sources import load_sources
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("base_url")
-    parser.add_argument("--output", type=Path, default=ROOT / "docs/public-smoke.json")
+    parser.add_argument("--output", type=Path, default=ROOT / "artifacts/public-smoke.json")
     args = parser.parse_args()
     base = args.base_url.rstrip("/")
     approved = {s.url for s in load_sources(ROOT / "config/approved_sources.yaml")}
@@ -100,8 +100,6 @@ def main():
         },
         "price_source_urls": source_urls,
         "unknown_status": unknown_data.get("status"),
-        "temporary_tunnel": base.endswith(".trycloudflare.com"),
-        "seven_day_uptime_verified": False,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n")

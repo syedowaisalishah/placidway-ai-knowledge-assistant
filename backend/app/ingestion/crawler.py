@@ -13,7 +13,7 @@ from app.schemas import Source
 from app.sources import require_allowed
 
 USER_AGENT = (
-    "PlacidWayAssessmentBot/1.0 (+https://github.com/syedowaisalishah/placidway-ai-knowledge-assistant)"
+    "PlacidWayKnowledgeBot/1.0 (+https://github.com/syedowaisalishah/placidway-ai-knowledge-assistant)"
 )
 ROBOTS_URL = "https://www.placidway.com/robots.txt"
 

@@ -1,5 +1,4 @@
 import gzip
-import json
 
 import httpx
 import pytest
@@ -28,10 +27,16 @@ def test_exact_allowlist_rejects_expansion():
             require_allowed(url, SOURCES)
 
 
-def test_pdf_hyperlinks_match_allowlist():
-    proof = json.loads((ROOT / "docs/source-verification.json").read_text())
-    assert all(s["hyperlink_verified"] for s in proof["sources"])
-    assert {s["url"] for s in proof["sources"]} == {s.url for s in SOURCES}
+def test_source_inventory_is_restricted():
+    assert {s.id for s in SOURCES} == {f"source-{number}" for number in range(1, 8)}
+    assert {s.category for s in SOURCES} == {
+        "clinic_profile",
+        "treatment_package",
+        "clinic_videos",
+        "price_list",
+        "price_comparison",
+    }
+    assert len({s.url for s in SOURCES}) == 7
 
 
 async def test_robots_denial_prevents_page_request():

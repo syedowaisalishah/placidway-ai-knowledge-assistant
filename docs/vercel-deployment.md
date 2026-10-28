@@ -7,7 +7,7 @@ This project can be deployed as **one container**: the Next.js static export and
 ## Before importing
 
 - Use the public repository at `https://github.com/syedowaisalishah/placidway-ai-knowledge-assistant` (or your fork). Select the repository root as the Vercel project root.
-- Choose the free **Hobby** plan for this personal assessment/demo. Vercel restricts Hobby to personal or non-commercial use. Container functions use Fluid Compute, which `vercel.json` enables. Hobby usage is capped.
+- Choose the free **Hobby** plan for a personal demo. Vercel restricts Hobby to personal or non-commercial use. Container functions use Fluid Compute, which `vercel.json` enables. Hobby usage is capped.
 - Confirm that the Gemini key's Google AI Studio project is **Free + Active** and paid billing is disabled. Do not paste the key into Git, the frontend, or a build argument. Use Vercel's **Secret** environment-variable type.
 
 ## Import and configure
@@ -43,6 +43,6 @@ Health should report `status: ok`, `knowledge_ready: true`, `answer_mode: gemini
 
 The image contains the seven-page snapshot and the pinned ONNX MiniLM model. On each new container instance, `scripts/start_vercel.sh` links those read-only assets into `/tmp/placidway-ai-data`; the app reconstructs a writable Chroma index there. This is ephemeral. A new instance restores its own index, and a refresh does **not** permanently update future instances. Update `data/snapshot` in Git and redeploy to make new source content durable. Conversation memory, per-client rate limits, and the local daily Gemini budget are also instance-local, so they are not billing controls.
 
-Keep Google paid billing disabled for the selected Gemini project. Vercel Hobby has its own included usage and can pause features after limits are reached. Container deployments and large Functions are currently a Vercel beta; test the real URL and cold start before treating it as a reliable assessment submission. No hosting provider can be claimed to meet a seven-day uptime requirement until measured.
+Keep Google paid billing disabled for the selected Gemini project. Vercel Hobby has its own included usage and can pause features after limits are reached. Container deployments and large Functions are currently a Vercel beta; test the real URL and cold start before relying on the service for critical traffic.
 
 References: [Vercel container deployments](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions), [Vercel Hobby limits](https://vercel.com/docs/plans/hobby), [Vercel environment variables](https://vercel.com/docs/environment-variables), [Vercel stateless containers](https://vercel.com/kb/guide/docker-on-vercel-vs-render).

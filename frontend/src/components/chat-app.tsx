@@ -595,7 +595,7 @@ export function ChatApp() {
             </button>
           </div>
           <div className="sidebar-footer">
-            <span className="demo-dot" /> Assessment project <span>v1.0</span>
+            <span className="demo-dot" /> Knowledge assistant <span>v1.0</span>
           </div>
         </div>
       </aside>
@@ -666,8 +666,8 @@ export function ChatApp() {
               </span>
               <h1>See where answers come from.</h1>
               <p className="page-description">
-                The assistant uses only the seven PlacidWay pages approved for
-                this assessment. Open a page to read the original information.
+                The assistant uses only the seven PlacidWay pages in its source
+                library. Open a page to read the original information.
               </p>
               <div className="source-summary">
                 <span>
@@ -974,8 +974,8 @@ export function ChatApp() {
               Evidence you can read.
             </h2>
             <p>
-              This independent assessment project answers from seven specified
-              PlacidWay pages. It is not an official booking service.
+              This assistant answers from seven specified PlacidWay pages. It is
+              not an official booking service.
             </p>
             <ul>
               <li>Open each source card to see the supporting passage.</li>

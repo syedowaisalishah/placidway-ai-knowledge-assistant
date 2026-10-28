@@ -4,7 +4,7 @@ This is a single-assistant application with a Next.js static frontend and a Fast
 
 ```mermaid
 flowchart TD
-    PDF[Assessment PDF hyperlinks] --> Allowlist[Seven exact approved URLs]
+    Sources[Configured PlacidWay source list] --> Allowlist[Seven exact approved URLs]
     Allowlist --> Crawl[HTTPX crawler and robots policy]
     Crawl --> Extract[Main sections, tables and exact price rows]
     Extract --> Embed[Local MiniLM embeddings]
@@ -26,7 +26,7 @@ flowchart TD
 
 ## Source boundary
 
-`config/approved_sources.yaml` contains exactly seven HTTPS URLs. The URLs were recovered from embedded links in the supplied PDF, rather than guessed from page titles. `docs/source-verification.json` records the PDF checksum and matching links. The broader research in `docs/placidway-data.md` is never ingested.
+`config/approved_sources.yaml` defines the seven HTTPS URLs that form the chatbot's knowledge base. `load_sources` rejects duplicate IDs, duplicate URLs, unexpected hosts, query strings, and fragments. The broader research in `docs/placidway-data.md` is never ingested.
 
 The crawler fetches robots.txt separately as permission metadata. At ingestion the site requested a ten-second crawl delay, which overrides the one-second minimum. It uses an identifying User-Agent, bounded response sizes, timeouts, limited retries, and Retry-After. Redirects cannot change source identity. Access failures do not trigger alternative scraping or recursive crawling.
 
@@ -50,7 +50,7 @@ Raw visitor messages are analyzed locally. Only intent, treatment, clinic, desti
 
 Greetings, help requests, thanks, and ambiguous package questions receive local conversational replies. The API supplies fixed, localized suggested questions that were checked against the current seven-page index; the interface shows them as clickable follow-ups. An unrelated question receives a scope explanation and suggestions without an irrelevant quote prompt. Factual treatment and price answers still require source evidence and citations.
 
-Conversation memory stores those bounded topic fields for at most 30 minutes, with a 1,000-session cap. It never treats a previous assistant answer as evidence. Context is process-local and is lost on restart. For user-requested chat history, the frontend now saves up to 20 conversations and 60 messages per conversation in this browser's localStorage. Visitors can reopen or delete each conversation from the sidebar. This history is not synced between browsers or accounts. Deleting a browser conversation removes its displayed messages and saved browser copy; the server's limited topic context expires separately after at most 30 minutes. Visitors are asked not to enter personal medical details.
+Conversation memory stores those bounded topic fields for at most 30 minutes, with a 1,000-session cap. It never treats a previous assistant answer as evidence. Context is process-local and is lost on restart. The frontend saves up to 20 conversations and 60 messages per conversation in the browser's localStorage. Visitors can reopen or delete each conversation from the sidebar. This history is not synced between browsers or accounts. Deleting a browser conversation removes its displayed messages and saved browser copy; the server's limited topic context expires separately after at most 30 minutes. Visitors are asked not to enter personal medical details.
 
 Retrieval combines normalized cosine similarity with lexical overlap and intent-heading relevance. A named cancer package restricts retrieval to its exact approved page. Pricing uses structured records for the exact treatment, location, clinic, and program. Conflicting rows for an identical price identity cause abstention. A package price cannot establish an unlisted component cost. For a comparison, the app requires exactly one same-procedure clinic listing from each of two named countries on the approved comparison page and matching displayed currency symbols. It reports the numerically lower listing with both original rows and a warning that sessions and inclusions are not proven equivalent; other comparisons abstain.
 

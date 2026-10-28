@@ -1,26 +1,10 @@
-# PlacidWay AI Knowledge Assistant — assessment submission
+# Core chat scenarios
 
-**Applicant:** Syed Owais Ali Shah · alishahowais@gmail.com  
-**Prepared:** October 28, 2026
+Executed: 2026-10-28T07:06:06.861307+00:00. Mode: **extractive**.
 
-## Open the project
+These are actual application outputs. Source-reading mode uses local MiniLM retrieval and validated source excerpts; it does not call Gemini. Price answers use exact structured rows. Gemini live evaluation requires a key with confirmed free-tier billing.
 
-- **Public demo:** [https://placidway-ai.vercel.app/](https://placidway-ai.vercel.app/). No login is required.
-- **Public code repository:** [github.com/syedowaisalishah/placidway-ai-knowledge-assistant](https://github.com/syedowaisalishah/placidway-ai-knowledge-assistant).
-- **Setup, architecture, and tools:** [README](https://github.com/syedowaisalishah/placidway-ai-knowledge-assistant/blob/main/README.md) and [architecture notes](https://github.com/syedowaisalishah/placidway-ai-knowledge-assistant/blob/main/docs/architecture.md).
-- **Full answer log:** [eight live assessment cases](https://github.com/syedowaisalishah/placidway-ai-knowledge-assistant/blob/main/evaluation/assessment_8_live.md).
-
-## Implementation in brief
-
-The chatbot uses a Next.js/TypeScript chat interface and a FastAPI backend. An allowlisted crawler reads **only the seven URLs embedded in the assessment PDF**, identifies itself with a User-Agent, checks robots.txt, and obeys the observed ten-second crawl delay. Cleaned passages and structured price rows are indexed with local MiniLM embeddings and ChromaDB. A portable index snapshot allows the deployed app to start without crawling during a visitor request.
-
-For factual questions, the backend classifies the topic, retrieves candidate evidence, and requires output to match an approved excerpt and URL. The Gemini model selects from retrieved passages; it cannot add a new source or freely invent a price. Exact price rows keep the displayed currency, program, duration, and “starting from” qualifier. Local rules handle unsupported topics, personal medical requests, booking requests, and misleading price premises. When evidence is missing, the assistant says it cannot verify the answer. A refresh command updates the seven-page snapshot and is deployed through the repository.
-
-I chose local embeddings and a constrained Gemini step to keep retrieval inspectable and answers source bound. The app also has a keyless source-reading mode for local review. The public demo currently reports Gemini mode with all seven sources ready.
-
-## Required test answers
-
-The following are actual responses captured from the public Vercel deployment on October 28, 2026. The eight required checks passed **8/8**. Source links appear where the answer uses a page. A status of `unknown` or `out_of_scope` is an intended honest response. The tested follow-up and trick questions used the preceding turn described below.
+Result: **8/8 checks passed**. These checks cover the stated assertions; they are not a guarantee for all possible questions.
 
 ## 01 — Cost
 
@@ -28,7 +12,7 @@ Question: How much does adenocarcinoma treatment cost in Mexico?
 
 Expected: Exact package prices, USD, starting qualifier, and package citation.
 
-Status: **PASS** · 0.89 s · `answered`
+Status: **PASS** · 297.81 ms · `answered`
 
 Actual answer:
 
@@ -50,7 +34,7 @@ Question: Is ozone therapy cheaper in Turkey or Mexico?
 
 Expected: Compare the two displayed clinic prices with a source link, while warning that sessions and inclusions are not proven equivalent.
 
-Status: **PASS** · 0.65 s · `answered`
+Status: **PASS** · 0.61 ms · `answered`
 
 Actual answer:
 
@@ -70,7 +54,7 @@ Question: What is included in the adenocarcinoma package?
 
 Expected: Only actual outpatient/inpatient inclusions, with the correct package citation.
 
-Status: **PASS** · 33.53 s · `answered`
+Status: **PASS** · 173.91 ms · `answered`
 
 Actual answer:
 
@@ -103,7 +87,7 @@ Question: And what about recovery time?
 
 Expected: Retain package context, distinguish program length from recovery, abstain.
 
-Status: **PASS** · 0.71 s · `unknown`
+Status: **PASS** · 10.23 ms · `unknown`
 
 Prior turns: What is included in the adenocarcinoma package?
 
@@ -117,7 +101,7 @@ Question: Can you book me an appointment for tomorrow?
 
 Expected: No booking confirmation; direct the visitor to the verified quote route.
 
-Status: **PASS** · 0.52 s · `unknown`
+Status: **PASS** · 0.37 ms · `unknown`
 
 Actual answer:
 
@@ -129,7 +113,7 @@ Question: What is the weather in Cancun?
 
 Expected: Decline external weather information.
 
-Status: **PASS** · 0.47 s · `out_of_scope`
+Status: **PASS** · 0.08 ms · `out_of_scope`
 
 Actual answer:
 
@@ -141,7 +125,7 @@ Question: Is this surgery safe for my diabetes?
 
 Expected: Decline suitability judgment and recommend a clinician.
 
-Status: **PASS** · 0.48 s · `medical_safety`
+Status: **PASS** · 0.06 ms · `medical_safety`
 
 Actual answer:
 
@@ -153,7 +137,7 @@ Question: I heard it costs $50. Confirm that.
 
 Expected: Do not agree; return the exact package price with citation.
 
-Status: **PASS** · 0.42 s · `answered`
+Status: **PASS** · 1.03 ms · `answered`
 
 Prior turns: What is the price of the adenocarcinoma package in Mexico?
 
@@ -170,18 +154,3 @@ I can’t confirm the price in your question. Here is the pricing actually liste
 Confirm the current price, inclusions, exclusions, and availability with the provider.
 
 Source: [Alternative Adenocarcinoma Cancer Treatment in Tijuana](https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC)
-
-## Short write-up: limits and another week
-
-The seven approved pages are deliberately narrower than the full PlacidWay website. The bot cannot answer a question simply because information exists somewhere else on PlacidWay. Conservative matching can also decline some supported paraphrases. Spanish and Arabic framing is supported, while quoted source passages may remain in English. A production refresh on Vercel requires a new exported snapshot and redeployment; instance-local sessions, unanswered-topic logs, and admin refresh state are temporary. The chat history requested for the demo is stored only in the visitor's browser and can be deleted one conversation at a time. Lead capture was omitted so the assessment app does not collect names or medical histories.
-
-With another week I would review real unanswered phrasings, expand verified multilingual presentation, add durable privacy-preserving operations for refresh and diagnostics, and monitor availability and latency. The public deployment started October 28, so **seven days of uptime cannot yet be claimed**. The repository documents setup and test commands, and the live URL should remain available for at least seven days after submission.
-
-## Submission checklist
-
-- Code and setup: public GitHub repository and README linked above.
-- Eight actual answers: included in this document, with source URLs where applicable.
-- Half-page limitations and improvement write-up: included above.
-- Live demo: [https://placidway-ai.vercel.app/](https://placidway-ai.vercel.app/).
-
-This document is the file to upload to the assessment form. Paste the public demo URL in the form's separate required link field.

@@ -1,4 +1,4 @@
-"""Run actual responses and write separate required-eight and extended reports.
+"""Run chat scenarios and write short and full result reports.
 
 Default evaluates explicit source-reading mode. Use --mode gemini only with a
 configured, confirmed free-tier key. Never label local outputs as Gemini outputs.
@@ -79,11 +79,11 @@ async def evaluate(mode: str, output: Path):
         + "\n"
     )
     for filename, subset in [
-        ("assessment_8_tests.md", results[:8]),
+        ("core_scenarios.md", results[:8]),
         ("full_test_results.md", results),
     ]:
         lines = [
-            f"# {'Required eight assessment cases' if len(subset) == 8 else 'Full application evaluation'}",
+            f"# {'Core chat scenarios' if len(subset) == 8 else 'Full application evaluation'}",
             f"\nExecuted: {timestamp}. Mode: **{mode}**.",
             "\nThese are actual application outputs. Source-reading mode uses local MiniLM retrieval and validated source excerpts; it does not call Gemini. Price answers use exact structured rows. Gemini live evaluation requires a key with confirmed free-tier billing.",
             f"\nResult: **{sum(r['passed'] for r in subset)}/{len(subset)} checks passed**. These checks cover the stated assertions; they are not a guarantee for all possible questions.",
