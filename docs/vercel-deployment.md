@@ -1,5 +1,7 @@
 # Deploy on Vercel Hobby
 
+The production project is **`placidway-ai`** and the live URL is [placidway-ai.vercel.app](https://placidway-ai.vercel.app). It was linked to the GitHub repository on October 28, 2026. Production has Gemini enabled through Vercel environment variables. The Gemini and admin keys are stored as sensitive variables; their values are not in Git or the container image.
+
 This project can be deployed as **one container**: the Next.js static export and FastAPI API share the same origin. Vercel detects the root `Dockerfile.vercel`, builds the image, and runs its HTTP server on `$PORT`. The existing Docker Compose file is for local use; Vercel does not run Compose.
 
 ## Before importing
