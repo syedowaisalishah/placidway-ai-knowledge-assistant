@@ -12,6 +12,8 @@ Visitors can greet the assistant, ask what it can do, or use clickable follow-up
 
 The interface uses the [official PlacidWay logo](https://www.placidway.com/frontend/images/PlacidWay-logo-opt.png) stored locally in `frontend/public/brand/` and a coral, white, and charcoal theme based on the current PlacidWay homepage. This visual branding does not expand the assistant's seven-page factual knowledge scope.
 
+The chat uses larger default reading text, clearer source labels and controls, and a wider answer column. The **Text size** button switches to an even larger view and saves the preference in the browser. On narrow screens, topic cards stack vertically and the composer remains usable without horizontal scrolling.
+
 See [chatbot limitations](docs/chatbot-limitations.md) for why some questions receive an unknown response and what expanding coverage would require. In particular, the assessment explicitly limits factual answers to the seven linked pages; the broader research note is not part of the chatbot index.
 
 ## Run locally

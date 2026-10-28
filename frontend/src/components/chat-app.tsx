@@ -115,8 +115,8 @@ function AssistantMessage({
           PlacidWay assistant{" "}
           <span>
             {response?.sources.length
-              ? "SOURCE-GROUNDED"
-              : "KNOWLEDGE GUIDE"}
+              ? "Based on listed sources"
+              : "Here to help"}
           </span>
         </div>
         <div className="answer-copy">
@@ -139,7 +139,7 @@ function AssistantMessage({
         {!!response?.sources.length && (
           <div className="citations">
             <div className="citation-label">
-              <BookOpen size={13} /> SOURCES FOR THIS ANSWER
+              <BookOpen size={16} /> Sources for this answer
             </div>
             {response.sources.map((source, index) => (
               <details key={source.id} className="citation">
@@ -229,6 +229,7 @@ export function ChatApp() {
   const [view, setView] = useState<"chat" | "sources">("chat");
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [largeText, setLargeText] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const abortRef = useRef<AbortController | null>(null);
@@ -248,6 +249,13 @@ export function ChatApp() {
   useEffect(() => {
     void refreshStatus();
     return () => abortRef.current?.abort();
+  }, []);
+  useEffect(() => {
+    try {
+      setLargeText(localStorage.getItem("placidway-large-text") === "true");
+    } catch {
+      // The default reading size still works when browser storage is unavailable.
+    }
   }, []);
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
@@ -372,7 +380,7 @@ export function ChatApp() {
             : "Knowledge unavailable";
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell ${largeText ? "large-text" : ""}`}>
       <a className="skip-link" href="#main-content">
         Skip to conversation
       </a>
@@ -486,6 +494,24 @@ export function ChatApp() {
             <span className="beta-tag">BETA</span>
           </div>
           <div className="topbar-right">
+            <button
+              type="button"
+              className="text-size-toggle"
+              aria-label={largeText ? "Use standard text size" : "Use larger text"}
+              aria-pressed={largeText}
+              onClick={() => {
+                const next = !largeText;
+                setLargeText(next);
+                try {
+                  localStorage.setItem("placidway-large-text", String(next));
+                } catch {
+                  // The choice remains active for this tab.
+                }
+              }}
+            >
+              <span aria-hidden="true">Aa</span>
+              <span>Text size</span>
+            </button>
             <span
               className={`connection ${ready && connection === "connected" ? "ready" : "pending"}`}
             >

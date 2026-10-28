@@ -1697,3 +1697,439 @@ summary:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* Reading-first defaults for patients and family members across age groups. */
+.sidebar {
+  overflow-y: auto;
+}
+.workspace-label,
+.brand-sub {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #555;
+}
+.new-chat,
+.nav-items button.active,
+.sidebar-topics button:hover,
+.trust-card button,
+.beta-tag,
+.source-number,
+.source-summary > span:first-child,
+.source-summary button,
+.secondary-button {
+  color: #a8332d;
+}
+.new-chat,
+.nav-items button,
+.sidebar-topics button {
+  min-height: 44px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.sidebar-topics button {
+  width: 100%;
+}
+.trust-card strong {
+  font-size: 14px;
+}
+.trust-card p,
+.trust-card button {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.trust-card button {
+  min-height: 36px;
+  text-align: left;
+}
+.sidebar-footer {
+  font-size: 11px;
+}
+.topbar-title {
+  font-size: 16px;
+}
+.beta-tag {
+  font-size: 10px;
+}
+.connection {
+  font-size: 13px;
+  color: #4d5d5b;
+}
+.text-size-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  background: #fff;
+  color: #454545;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.text-size-toggle:hover,
+.text-size-toggle[aria-pressed="true"] {
+  border-color: #e96961;
+  background: #fff4f2;
+  color: #a62e29;
+}
+.text-size-toggle > span:first-child {
+  font-size: 17px;
+  letter-spacing: -1px;
+}
+.text-size-toggle:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+.welcome {
+  max-width: 960px;
+}
+.eyebrow {
+  font-size: 11px;
+  color: #a92f29;
+}
+.welcome-description,
+.page-description {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #444;
+}
+.scope-pill {
+  font-size: 13px;
+  line-height: 1.4;
+}
+.suggestion strong {
+  font-size: 16px;
+  line-height: 1.35;
+}
+.suggestion > span:not(.suggestion-icon) {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #555;
+}
+.suggestion {
+  min-height: 94px;
+}
+.welcome-trust {
+  font-size: 12px;
+  color: #555;
+}
+.conversation {
+  max-width: 1100px;
+  width: 100%;
+  padding: 36px 36px 24px;
+}
+.message {
+  gap: 15px;
+  margin-bottom: 34px;
+}
+.message-name {
+  flex-wrap: wrap;
+  font-size: 16px;
+  margin: 5px 0 12px;
+}
+.message-name > span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: #656565;
+}
+.message.user > div {
+  font-size: 16px;
+  line-height: 1.55;
+  padding: 14px 18px;
+}
+.answer-copy {
+  max-width: 88ch;
+  font-size: 17px;
+  line-height: 1.72;
+  color: #303030;
+}
+.answer-copy p {
+  margin-bottom: 15px;
+}
+.answer-copy blockquote {
+  border-left-width: 3px;
+  margin: 14px 0;
+  padding: 8px 15px;
+  background: #fff;
+  color: #333;
+}
+.answer-copy blockquote p:last-child {
+  margin-bottom: 0;
+}
+.citation-label {
+  font-size: 12px;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: #4d4d4d;
+}
+.citation summary {
+  min-height: 48px;
+  padding: 11px 14px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #a8332d;
+}
+.source-number {
+  width: 27px;
+  height: 27px;
+  font-size: 12px;
+}
+.citation-evidence {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #414141;
+}
+.citation-evidence a {
+  min-height: 38px;
+  font-size: 14px;
+  color: #a8332d;
+}
+.quote-link {
+  min-height: 46px;
+  padding: 11px 15px;
+  font-size: 15px;
+  color: #a8332d;
+}
+.followup-suggestions > span {
+  font-size: 14px;
+  color: #484848;
+}
+.followup-suggestions button {
+  min-height: 44px;
+  padding: 11px 13px;
+  font-size: 14px;
+  color: #a8332d;
+}
+.medical-note {
+  font-size: 14px;
+  color: #505050;
+}
+.message-actions button {
+  min-height: 36px;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #555;
+}
+.thinking,
+.connection-notice,
+.mode-notice {
+  font-size: 13px;
+}
+.composer-area {
+  max-width: 1100px;
+  padding: 14px 36px 18px;
+}
+.composer {
+  padding: 16px 18px 12px;
+}
+.composer textarea {
+  min-height: 31px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.composer textarea::placeholder {
+  color: #686868;
+}
+.composer-tools,
+.composer-tools select {
+  font-size: 13px;
+  color: #454545;
+}
+.composer-tools select {
+  min-height: 36px;
+}
+.privacy-hint,
+.composer-footnote,
+.composer-footnote button {
+  font-size: 12px;
+  color: #555;
+}
+.character-count {
+  font-size: 12px;
+  color: #444;
+}
+.composer-footnote button {
+  min-height: 30px;
+}
+.send-button {
+  width: 44px;
+  height: 44px;
+}
+.sources-page {
+  max-width: 1000px;
+}
+.source-summary,
+.source-summary button,
+.library-note {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.source-summary button {
+  min-height: 40px;
+}
+.source-category,
+.source-domain,
+.source-state {
+  font-size: 12px;
+  color: #555;
+}
+.source-state.indexed {
+  color: #1e6939;
+}
+.library-source h2 {
+  font-size: 16px;
+  line-height: 1.45;
+}
+.about-modal > p,
+.about-modal ul,
+.about-privacy p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #414141;
+}
+.primary-button,
+.secondary-button {
+  min-height: 44px;
+  font-size: 14px;
+}
+
+/* An optional, persistent reading preference. */
+.large-text .answer-copy {
+  font-size: 20px;
+}
+.large-text .message.user > div,
+.large-text .welcome-description,
+.large-text .page-description {
+  font-size: 19px;
+}
+.large-text .citation summary,
+.large-text .citation-evidence,
+.large-text .citation-evidence a,
+.large-text .followup-suggestions button,
+.large-text .medical-note,
+.large-text .composer textarea,
+.large-text .library-source h2 {
+  font-size: 17px;
+}
+.large-text .sidebar-topics button,
+.large-text .nav-items button,
+.large-text .new-chat,
+.large-text .quote-link {
+  font-size: 16px;
+}
+
+@media (max-width: 800px) {
+  .topbar-title {
+    font-size: 13px;
+  }
+  .connection {
+    font-size: 12px;
+  }
+  .conversation {
+    padding: 28px 24px 20px;
+  }
+  .composer-area {
+    padding: 12px 24px 16px;
+  }
+}
+@media (max-width: 480px) {
+  .topbar-title {
+    font-size: 12px;
+  }
+  .topbar-right {
+    gap: 5px;
+  }
+  .text-size-toggle {
+    width: 39px;
+    min-width: 39px;
+    padding: 5px;
+  }
+  .text-size-toggle > span:last-child {
+    display: none;
+  }
+  .connection {
+    max-width: 80px;
+    font-size: 11px;
+  }
+  .welcome {
+    padding: 30px 19px 24px;
+  }
+  .welcome h1 {
+    font-size: 31px;
+  }
+  .welcome-description {
+    font-size: 16px;
+  }
+  .desktop-break {
+    display: none;
+  }
+  .scope-pill {
+    font-size: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .suggestions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .suggestion {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    min-height: 78px;
+    gap: 4px 10px;
+    padding: 13px 16px;
+  }
+  .suggestion-icon {
+    grid-row: span 2;
+  }
+  .suggestion strong {
+    font-size: 16px;
+  }
+  .suggestion > span:not(.suggestion-icon) {
+    font-size: 13px;
+  }
+  .suggestion-arrow {
+    display: none;
+  }
+  .welcome-trust {
+    font-size: 11px;
+  }
+  .composer-area {
+    padding: 10px 14px 12px;
+  }
+  .composer textarea {
+    font-size: 16px;
+  }
+  .composer-footnote,
+  .composer-footnote button {
+    font-size: 11px;
+  }
+  .conversation {
+    padding: 24px 14px 20px;
+  }
+  .message-name {
+    font-size: 14px;
+  }
+  .message-name > span {
+    font-size: 11px;
+  }
+  .answer-copy {
+    font-size: 16px;
+  }
+  .message.user > div {
+    font-size: 15px;
+  }
+  .sources-page {
+    padding: 30px 19px;
+  }
+  .library-source h2 {
+    font-size: 15px;
+  }
+  .about-modal {
+    padding: 26px 22px;
+  }
+}
