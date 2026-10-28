@@ -19,6 +19,7 @@ The first full Gemini evaluation then passed 28/30. Both failures were the anal-
 | A fact appears only elsewhere on PlacidWay | Declines to verify it | The seven-URL assessment allowlist excludes other pages. |
 | A treatment, clinic, or destination is not named in the approved evidence | Declines or asks for a more specific treatment | Similar packages and places cannot be treated as identical. |
 | A published program duration is given but recovery time is not | Declines the recovery estimate | A three-week program does not establish a recovery period. |
+| Two named countries have one exact same-procedure price listing each on the approved comparison page | Shows both displayed figures and the numerically lower listing with a caveat | Different clinics' services may not be equivalent; the page does not establish matching sessions or inclusions. |
 | A personal diagnosis, safety judgment, or promised outcome is requested | Gives a safety response | Website claims cannot determine individual clinical suitability. |
 | A question uses an entity or phrasing outside the local vocabulary | May decline even if a page contains a relevant fact | Raw personal text is not sent to the free-tier model; local parsing is intentionally constrained. |
 | Gemini hits a quota, credential, or provider error | Says answers are temporarily unavailable | The app does not disguise a model failure as a sourced answer. |

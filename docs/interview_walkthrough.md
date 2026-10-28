@@ -32,7 +32,7 @@ Show desktop and mobile chat, source cards, source library, quote handoff, clear
 
 ## 35–40 minutes: results and deployment
 
-Show `evaluation/assessment_8_tests.md`, `evaluation/full_test_results.md`, and `evaluation/verification.md`. Distinguish local source-reading results, deterministic tests, browser tests, and unverified live Gemini behavior. Open Dockerfile and Render configuration. Explain cold-start restoration, free-tier limits, missing account/key dependencies, and temporary tunnel limitations.
+Show `evaluation/assessment_8_live.md`, `evaluation/assessment_8_tests.md`, `evaluation/full_test_results.md`, and `docs/verification.md`. Distinguish production Gemini responses from local source-reading results, deterministic tests, and browser tests. Open `Dockerfile.vercel` and `docs/vercel-deployment.md`. Explain cold-start restoration, ephemeral refresh state, free-tier limits, and why seven-day availability is still pending.
 
 ## 40–45 minutes: a small live change
 
