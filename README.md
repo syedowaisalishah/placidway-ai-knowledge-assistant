@@ -4,6 +4,8 @@ Repository: [github.com/syedowaisalishah/placidway-ai-knowledge-assistant](https
 
 Live deployment: [placidway-ai.vercel.app](https://placidway-ai.vercel.app).
 
+Assessment upload: [single submission PDF](docs/PlacidWay-Chatbot-Assessment-Submission.pdf), with [editable Markdown source](docs/assessment-submission.md). It contains the repository and public demo links, architecture summary, eight real live answers, and short limitations write-up.
+
 A working, source-cited assessment chatbot built from the seven PlacidWay pages linked in the supplied PDF. It has a Next.js chat interface and a FastAPI API. Local MiniLM embeddings and ChromaDB retrieve passages; exact price rows are stored separately. An optional Gemini stage selects source passages through the official SDK. A checkout without a confirmed free-tier Gemini key runs in **source-reading mode**. It never presents local output as Gemini output.
 
 The app answers only from the approved pages. It links each factual answer to its source, preserves displayed price qualifiers, and abstains when the exact treatment, destination, clinic, program, or evidence is absent. It does not give personal medical advice or treat the website's promotional claims as independently verified facts.
